@@ -34,3 +34,12 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+# Visual Studio files & binaries
+.vs/
+bin/
+obj/
+*.suo
+packages/
+
+*.DotSettings.user

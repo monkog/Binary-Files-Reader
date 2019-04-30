@@ -7,8 +7,8 @@
     <ProjectGuid>{ADBDA288-9E77-44D5-B411-4F3C5B19885A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WindowsFormsApplication1</RootNamespace>
-    <AssemblyName>WindowsFormsApplication1</AssemblyName>
+    <RootNamespace>BinaryFilesReader</RootNamespace>
+    <AssemblyName>BinaryFilesReader</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
