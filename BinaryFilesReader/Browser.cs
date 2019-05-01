@@ -264,7 +264,7 @@ namespace BinaryFilesReader
 		private void ListItemDoubleClick(object sender, EventArgs e)
 		{
 			if (listView.SelectedItems.Count <= 0) return;
-			var invokeWindow = new InvokeWindow { Owner = this };
+			var invokeWindow = new InvokeWindow(Methods[listView.SelectedItems[0]], ObjectList) { Owner = this };
 			invokeWindow.ShowDialog();
 		}
 

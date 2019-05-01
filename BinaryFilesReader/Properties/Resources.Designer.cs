@@ -121,6 +121,15 @@ namespace BinaryFilesReader.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Result of {0} method..
+        /// </summary>
+        internal static string InvocationResultWindowTitle {
+            get {
+                return ResourceManager.GetString("InvocationResultWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap method_privatevs10 {

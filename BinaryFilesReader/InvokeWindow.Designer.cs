@@ -38,6 +38,8 @@
 			// 
 			// dataGridView
 			// 
+			this.dataGridView.AllowUserToAddRows = false;
+			this.dataGridView.AllowUserToDeleteRows = false;
 			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnName,
@@ -88,6 +90,7 @@
 			this.Controls.Add(this.dataGridView);
 			this.Name = "InvokeWindow";
 			this.Text = "InvokeWindow";
+			this.Load += new System.EventHandler(this.Initialized);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			this.ResumeLayout(false);
 
