@@ -51,6 +51,7 @@
       <DependentUpon>Browser.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="IconsStyle.cs" />
     <Compile Include="InvokeWindow.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -11,31 +11,14 @@ namespace BinaryFilesReader
 		public Dictionary<ListViewItem, MethodInfo> Methods = new Dictionary<ListViewItem, MethodInfo>();
 		private Assembly _assembly;
 		private string _objPath;
-		private readonly ImageList _icons2010 = new ImageList();
-		private readonly ImageList _icons2012 = new ImageList();
 		public Dictionary<string, object> CreatedInstances = new Dictionary<string, object>();
 
 		public Browser()
 		{
 			InitializeComponent();
-			_icons2010.Images.Add(Properties.Resources.class_sealedvs10);
-			_icons2010.Images.Add(Properties.Resources.classvs10);
-			_icons2010.Images.Add(Properties.Resources.interfacevs10);
-			_icons2010.Images.Add(Properties.Resources.method_privatevs10);
-			_icons2010.Images.Add(Properties.Resources.method_protectedvs10);
-			_icons2010.Images.Add(Properties.Resources.method_publicvs10);
-			_icons2010.Images.Add(Properties.Resources.namespacevs10);
 
-			_icons2012.Images.Add(Properties.Resources.class_sealedvs11);
-			_icons2012.Images.Add(Properties.Resources.classvs11);
-			_icons2012.Images.Add(Properties.Resources.interfacevs11);
-			_icons2012.Images.Add(Properties.Resources.method_privatevs11);
-			_icons2012.Images.Add(Properties.Resources.method_protectedvs11);
-			_icons2012.Images.Add(Properties.Resources.method_publicvs11);
-			_icons2012.Images.Add(Properties.Resources.namespacevs11);
-			treeView.ImageList = _icons2010;
-			listView.SmallImageList = _icons2010;
-
+			treeView.ImageList = IconsStyle.Icons2010;
+			listView.SmallImageList = IconsStyle.Icons2010;
 			listView.ListViewItemSorter = new ListViewItemComparer();
 		}
 
@@ -45,7 +28,6 @@ namespace BinaryFilesReader
 
 			if (string.IsNullOrEmpty(path)) return;
 
-			Assembly assembly = null;
 			TreeNode root;
 
 			var tn = treeView.Nodes.Find(path, false);
@@ -58,6 +40,7 @@ namespace BinaryFilesReader
 
 			try
 			{
+				Assembly assembly;
 				if ((assembly = Assembly.LoadFile(path)) != null)
 				{
 					treeView.Nodes.Add(path.Substring(path.LastIndexOf("\\") + 1));
@@ -231,25 +214,25 @@ namespace BinaryFilesReader
 			CreatedInstances[_objPath] = _assembly.CreateInstance(_objPath);
 		}
 
+		private void OpenInvokeMethodWindow(object sender, EventArgs e)
+		{
+			if (listView.SelectedItems.Count == 0) return;
+			var invokeWindow = new InvokeWindow(Methods[listView.SelectedItems[0]], CreatedInstances.Values) { Owner = this };
+			invokeWindow.ShowDialog();
+		}
+
 		private void IconsTo2010StyleChanged(object sender, EventArgs e)
 		{
 			vS2010StyleToolStripMenuItem.Checked = true;
 			vS2012StyleToolStripMenuItem.Checked = false;
-			listView.SmallImageList = treeView.ImageList = _icons2010;
+			listView.SmallImageList = treeView.ImageList = IconsStyle.Icons2010;
 		}
 
 		private void IconsTo2012StyleChanged(object sender, EventArgs e)
 		{
 			vS2010StyleToolStripMenuItem.Checked = false;
 			vS2012StyleToolStripMenuItem.Checked = true;
-			listView.SmallImageList = treeView.ImageList = _icons2012;
-		}
-
-		private void OpenInvokeMethodWindow(object sender, EventArgs e)
-		{
-			if (listView.SelectedItems.Count == 0) return;
-			var invokeWindow = new InvokeWindow(Methods[listView.SelectedItems[0]], CreatedInstances.Values) { Owner = this };
-			invokeWindow.ShowDialog();
+			listView.SmallImageList = treeView.ImageList = IconsStyle.Icons2012;
 		}
 
 		private void DisplayDetailedMethodList(object sender, EventArgs e)
