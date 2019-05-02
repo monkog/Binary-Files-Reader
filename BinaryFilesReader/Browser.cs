@@ -14,7 +14,7 @@ namespace BinaryFilesReader
 		private string _objPath;
 		private readonly ImageList _icons2010 = new ImageList();
 		private readonly ImageList _icons2012 = new ImageList();
-		public List<object> ObjectList = new List<object>();
+		public Dictionary<string, object> CreatedInstances = new Dictionary<string, object>();
 
 		public Browser()
 		{
@@ -236,14 +236,7 @@ namespace BinaryFilesReader
 
 		private void CreateClicked(object sender, EventArgs e)
 		{
-			foreach (var obj in ObjectList)
-				if (obj.GetType() == _assembly.GetType(_objPath))
-				{
-					ObjectList.Remove(obj);
-					break;
-				}
-
-			ObjectList.Add(_assembly.CreateInstance(_objPath));
+			CreatedInstances[_objPath] = _assembly.CreateInstance(_objPath);
 		}
 
 		private void IconsTo2010StyleChanged(object sender, EventArgs e)
@@ -263,7 +256,7 @@ namespace BinaryFilesReader
 		private void ListItemDoubleClick(object sender, EventArgs e)
 		{
 			if (listView.SelectedItems.Count <= 0) return;
-			var invokeWindow = new InvokeWindow(Methods[listView.SelectedItems[0]], ObjectList) { Owner = this };
+			var invokeWindow = new InvokeWindow(Methods[listView.SelectedItems[0]], CreatedInstances.Values) { Owner = this };
 			invokeWindow.ShowDialog();
 		}
 
