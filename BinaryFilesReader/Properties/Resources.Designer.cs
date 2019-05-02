@@ -208,5 +208,14 @@ namespace BinaryFilesReader.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .NET binaries (*.dll; *exe)|*.dll;*.exe.
+        /// </summary>
+        internal static string SupportedAssemblyExtensions {
+            get {
+                return ResourceManager.GetString("SupportedAssemblyExtensions", resourceCulture);
+            }
+        }
     }
 }

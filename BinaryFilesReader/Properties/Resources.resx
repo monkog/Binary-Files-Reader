@@ -163,4 +163,7 @@
   <data name="InvocationResultWindowTitle" xml:space="preserve">
     <value>Result of {0} method.</value>
   </data>
+  <data name="SupportedAssemblyExtensions" xml:space="preserve">
+    <value>.NET binaries (*.dll; *exe)|*.dll;*.exe</value>
+  </data>
 </root>

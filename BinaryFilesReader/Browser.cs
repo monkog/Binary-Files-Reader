@@ -50,17 +50,11 @@ namespace BinaryFilesReader
 
 		private void LoadFileClicked(object sender, EventArgs e)
 		{
-			var ofd = new OpenFileDialog { Filter = ".NET binaries (*.dll; *exe)|*.dll;*.exe" };
-			ofd.ShowDialog();
-			treeView.Enabled = true;
-			treeView.Visible = true;
-
-			var path = ofd.FileName;
+			var path = SelectAssemblyPath();
 			Assembly assembly = null;
-			TreeNode[] tn = null;
 			TreeNode root;
 
-			tn = treeView.Nodes.Find(path, false);
+			var tn = treeView.Nodes.Find(path, false);
 
 			if (tn.Length != 0)
 			{
@@ -82,8 +76,6 @@ namespace BinaryFilesReader
 
 					foreach (var type in assembly.GetTypes())
 					{
-						type.GetMethods().ToList();
-
 						var c = type.FullName.Split('.');
 						for (var i = c.Length - 1; i >= 0; i--)
 						{
@@ -168,6 +160,13 @@ namespace BinaryFilesReader
 				if (assembly != null)
 					MessageBox.Show("File load failed.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+		}
+
+		private static string SelectAssemblyPath()
+		{
+			var openFileDialog = new OpenFileDialog { Filter = Properties.Resources.SupportedAssemblyExtensions };
+			openFileDialog.ShowDialog();
+			return openFileDialog.FileName;
 		}
 
 		private void ExitClicked(object sender, EventArgs e)
