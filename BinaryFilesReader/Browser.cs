@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -9,7 +8,7 @@ namespace BinaryFilesReader
 {
 	public partial class Browser : Form
 	{
-		public Dictionary<ListViewItem, MethodInfo> Methods;
+		public Dictionary<ListViewItem, MethodInfo> Methods = new Dictionary<ListViewItem, MethodInfo>();
 		private Assembly _assembly;
 		private string _objPath;
 		private readonly ImageList _icons2010 = new ImageList();
@@ -37,15 +36,7 @@ namespace BinaryFilesReader
 			treeView.ImageList = _icons2010;
 			listView.SmallImageList = _icons2010;
 
-			listView.DoubleClick += ListItemDoubleClick;
-			listView.Sorting = SortOrder.None;
 			listView.ListViewItemSorter = new ListViewItemComparer();
-
-			listView.ContextMenuStrip = contextMenuStrip;
-			listView.ContextMenuStrip.Items[0].Click += ListClick;
-			listView.ContextMenuStrip.Items[1].Click += DetailsClick;
-
-			Methods = new Dictionary<ListViewItem, MethodInfo>();
 		}
 
 		private void LoadFileClicked(object sender, EventArgs e)
@@ -253,21 +244,21 @@ namespace BinaryFilesReader
 			listView.SmallImageList = treeView.ImageList = _icons2012;
 		}
 
-		private void ListItemDoubleClick(object sender, EventArgs e)
+		private void OpenInvokeMethodWindow(object sender, EventArgs e)
 		{
-			if (listView.SelectedItems.Count <= 0) return;
+			if (listView.SelectedItems.Count == 0) return;
 			var invokeWindow = new InvokeWindow(Methods[listView.SelectedItems[0]], CreatedInstances.Values) { Owner = this };
 			invokeWindow.ShowDialog();
 		}
 
-		private void DetailsClick(object sender, EventArgs e)
+		private void DisplayDetailedMethodList(object sender, EventArgs e)
 		{
 			listToolStripMenuItem.Checked = false;
 			detailsToolStripMenuItem.Checked = true;
 			listView.View = View.Details;
 		}
 
-		private void ListClick(object sender, EventArgs e)
+		private void DisplayMethodList(object sender, EventArgs e)
 		{
 			listToolStripMenuItem.Checked = true;
 			detailsToolStripMenuItem.Checked = false;

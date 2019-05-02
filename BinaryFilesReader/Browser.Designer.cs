@@ -72,7 +72,7 @@
 			// loadFileToolStripMenuItem
 			// 
 			this.loadFileToolStripMenuItem.Name = "loadFileToolStripMenuItem";
-			this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
 			this.loadFileToolStripMenuItem.Text = "Load file";
 			this.loadFileToolStripMenuItem.Click += new System.EventHandler(this.LoadFileClicked);
 			// 
@@ -84,7 +84,7 @@
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitClicked);
 			// 
@@ -102,14 +102,14 @@
 			this.vS2010StyleToolStripMenuItem.Checked = true;
 			this.vS2010StyleToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.vS2010StyleToolStripMenuItem.Name = "vS2010StyleToolStripMenuItem";
-			this.vS2010StyleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.vS2010StyleToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.vS2010StyleToolStripMenuItem.Text = "VS2010 style";
 			this.vS2010StyleToolStripMenuItem.Click += new System.EventHandler(this.IconsTo2010StyleChanged);
 			// 
 			// vS2012StyleToolStripMenuItem
 			// 
 			this.vS2012StyleToolStripMenuItem.Name = "vS2012StyleToolStripMenuItem";
-			this.vS2012StyleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.vS2012StyleToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.vS2012StyleToolStripMenuItem.Text = "VS2012 style";
 			this.vS2012StyleToolStripMenuItem.Click += new System.EventHandler(this.IconsTo2012StyleChanged);
 			// 
@@ -142,6 +142,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.column});
+			this.listView.ContextMenuStrip = this.contextMenuStrip;
 			this.listView.Location = new System.Drawing.Point(215, 28);
 			this.listView.MultiSelect = false;
 			this.listView.Name = "listView";
@@ -149,6 +150,7 @@
 			this.listView.TabIndex = 0;
 			this.listView.UseCompatibleStateImageBehavior = false;
 			this.listView.View = System.Windows.Forms.View.List;
+			this.listView.DoubleClick += new System.EventHandler(this.OpenInvokeMethodWindow);
 			// 
 			// column
 			// 
@@ -160,14 +162,16 @@
 			this.listToolStripMenuItem.Checked = true;
 			this.listToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.listToolStripMenuItem.Name = "listToolStripMenuItem";
-			this.listToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+			this.listToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.listToolStripMenuItem.Text = "List";
+			this.listToolStripMenuItem.Click += new System.EventHandler(this.DisplayMethodList);
 			// 
 			// detailsToolStripMenuItem
 			// 
 			this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
-			this.detailsToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+			this.detailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.detailsToolStripMenuItem.Text = "Details";
+			this.detailsToolStripMenuItem.Click += new System.EventHandler(this.DisplayDetailedMethodList);
 			// 
 			// contextMenuStrip
 			// 
