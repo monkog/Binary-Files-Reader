@@ -42,6 +42,9 @@ namespace BinaryFilesReader
 		private void LoadFileClicked(object sender, EventArgs e)
 		{
 			var path = SelectAssemblyPath();
+
+			if (string.IsNullOrEmpty(path)) return;
+
 			Assembly assembly = null;
 			TreeNode root;
 
@@ -51,7 +54,6 @@ namespace BinaryFilesReader
 			{
 				root = tn[0];
 				root.Remove();
-				root = new TreeNode();
 			}
 
 			try
@@ -148,8 +150,7 @@ namespace BinaryFilesReader
 			}
 			catch (Exception)
 			{
-				if (assembly != null)
-					MessageBox.Show("File load failed.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("File load failed.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 
