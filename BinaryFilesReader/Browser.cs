@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -43,11 +44,8 @@ namespace BinaryFilesReader
 				Assembly assembly;
 				if ((assembly = Assembly.LoadFile(path)) != null)
 				{
-					treeView.Nodes.Add(path.Substring(path.LastIndexOf("\\") + 1));
+					treeView.Nodes.Add(path, path.Substring(path.LastIndexOf("\\") + 1), 6, 6);
 					root = treeView.Nodes[treeView.Nodes.Count - 1];
-					root.Name = path;
-					root.ImageIndex = 6;
-					root.SelectedImageIndex = root.ImageIndex;
 					var thisRoot = root;
 
 					foreach (var type in assembly.GetTypes())
@@ -151,28 +149,19 @@ namespace BinaryFilesReader
 
 		private void AssemblyObjectSelected(object sender, TreeViewEventArgs e)
 		{
-			string path = e.Node.FullPath, rootName;
 			TreeNode root = null;
-			try
-			{
-				rootName = path.Substring(0, path.IndexOf('\\'));
-			}
-			catch (Exception)
-			{
-				return;
-			}
+			var pathParts = e.Node.FullPath.Split('\\');
+			if (pathParts.Length == 1) return;
 
 			foreach (TreeNode treeNode in treeView.Nodes)
-				if (treeNode.Text == rootName)
+				if (treeNode.Text == pathParts[0])
 				{
 					root = treeNode;
 					break;
 				}
 
 			_assembly = Assembly.LoadFile(root.Name);
-			_objPath = path.Substring(path.IndexOf('\\') + 1);
-			_objPath = _objPath.Replace('\\', '.');
-
+			_objPath = string.Join(".", pathParts.Skip(1));
 			buttonCreate.Enabled = false;
 
 			try
@@ -184,23 +173,13 @@ namespace BinaryFilesReader
 				if (ci != null && objType.IsAbstract == false)
 					buttonCreate.Enabled = true;
 				foreach (var method in objType.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public))
-					if (method.IsPublic)
-					{
-						var lvi = new ListViewItem(method.Name)
-						{
-							ImageIndex = 5,
-							StateImageIndex = 5,
-							Name = method.DeclaringType?.FullName
-						};
-						listView.Items.Add(lvi);
-						Methods.Add(lvi, method);
-					}
-					else
-					{
-						var lvi = new ListViewItem(method.Name) { ImageIndex = 4, StateImageIndex = 4 };
-						listView.Items.Add(lvi);
-						Methods.Add(lvi, method);
-					}
+				{
+					var iconIndex = method.IsPublic ? 5 : 4;
+					var methodItem = new ListViewItem(method.Name) { ImageIndex = iconIndex, StateImageIndex = iconIndex };
+					listView.Items.Add(methodItem);
+					Methods.Add(methodItem, method);
+				}
+
 				listView.Sort();
 			}
 			catch (Exception)
