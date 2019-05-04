@@ -62,23 +62,8 @@ namespace BinaryFilesReader
 									root.Name = c[j];
 
 									var objPath = GetFullTypeName(root.FullPath);
-
 									var tmpType = assembly.GetType(objPath);
-									if (tmpType != null)
-									{
-										if (tmpType.IsClass)
-											root.ImageIndex = tmpType.IsSealed ? 0 : 1;
-										else if (tmpType.IsInterface)
-											root.ImageIndex = 2;
-										else if (tmpType.IsNotPublic)
-											root.ImageIndex = 3;
-										else if (tmpType.IsPublic)
-											root.ImageIndex = 5;
-										else if (tmpType.IsNestedPrivate)
-											root.ImageIndex = 4;
-									}
-									else
-										root.ImageIndex = 6;
+									root.ImageIndex = GetTypeImageIndex(tmpType);
 									root.SelectedImageIndex = root.ImageIndex;
 								}
 								root = thisRoot;
@@ -94,26 +79,8 @@ namespace BinaryFilesReader
 									root.Name = c[j];
 
 									var objPath = GetFullTypeName(root.FullPath);
-
 									var tmpType = assembly.GetType(objPath);
-									if (tmpType != null)
-									{
-										if (tmpType.IsClass)
-											if (tmpType.IsSealed)
-												root.ImageIndex = 0;
-											else
-												root.ImageIndex = 1;
-										else if (tmpType.IsInterface)
-											root.ImageIndex = 2;
-										else if (tmpType.IsNotPublic)
-											root.ImageIndex = 3;
-										else if (tmpType.IsPublic)
-											root.ImageIndex = 5;
-										else if (tmpType.IsNestedPrivate)
-											root.ImageIndex = 4;
-									}
-									else
-										root.ImageIndex = 6;
+									root.ImageIndex = GetTypeImageIndex(tmpType);
 									root.SelectedImageIndex = root.ImageIndex;
 								}
 								root = thisRoot;
@@ -128,6 +95,27 @@ namespace BinaryFilesReader
 			{
 				MessageBox.Show("File load failed.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+		}
+
+		private static int GetTypeImageIndex(Type tmpType)
+		{
+			if (tmpType != null)
+			{
+				if (tmpType.IsClass)
+					return tmpType.IsSealed ? 0 : 1;
+				if (tmpType.IsInterface)
+					return 2;
+				if (tmpType.IsNotPublic)
+					return 3;
+				if (tmpType.IsPublic)
+					return 5;
+				if (tmpType.IsNestedPrivate)
+					return 4;
+			}
+			else
+				return 6;
+
+			throw new NotSupportedException();
 		}
 
 		private static string SelectAssemblyPath()
