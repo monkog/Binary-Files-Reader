@@ -11,7 +11,6 @@ namespace BinaryFilesReader
 	{
 		public Dictionary<ListViewItem, MethodInfo> Methods = new Dictionary<ListViewItem, MethodInfo>();
 		private Assembly _assembly;
-		private string _objPath;
 		public Dictionary<string, object> CreatedInstances = new Dictionary<string, object>();
 
 		public Browser()
@@ -26,11 +25,9 @@ namespace BinaryFilesReader
 		private void LoadFileClicked(object sender, EventArgs e)
 		{
 			var path = SelectAssemblyPath();
-
 			if (string.IsNullOrEmpty(path)) return;
 
 			TreeNode root;
-
 			var tn = treeView.Nodes.Find(path, false);
 
 			if (tn.Length != 0)
@@ -64,8 +61,7 @@ namespace BinaryFilesReader
 									root = root.Nodes[root.Nodes.Count - 1];
 									root.Name = c[j];
 
-									var objPath = root.FullPath.Substring(root.FullPath.IndexOf('\\') + 1);
-									objPath = objPath.Replace('\\', '.');
+									var objPath = GetFullTypeName(root.FullPath);
 
 									var tmpType = assembly.GetType(objPath);
 									if (tmpType != null)
@@ -97,8 +93,7 @@ namespace BinaryFilesReader
 									root = root.Nodes[root.Nodes.Count - 1];
 									root.Name = c[j];
 
-									var objPath = root.FullPath.Substring(root.FullPath.IndexOf('\\') + 1);
-									objPath = objPath.Replace('\\', '.');
+									var objPath = GetFullTypeName(root.FullPath);
 
 									var tmpType = assembly.GetType(objPath);
 									if (tmpType != null)
@@ -149,10 +144,10 @@ namespace BinaryFilesReader
 
 		private void AssemblyObjectSelected(object sender, TreeViewEventArgs e)
 		{
-			TreeNode root = null;
 			var pathParts = e.Node.FullPath.Split('\\');
 			if (pathParts.Length == 1) return;
 
+			TreeNode root = null;
 			foreach (TreeNode treeNode in treeView.Nodes)
 				if (treeNode.Text == pathParts[0])
 				{
@@ -160,18 +155,20 @@ namespace BinaryFilesReader
 					break;
 				}
 
-			_assembly = Assembly.LoadFile(root.Name);
-			_objPath = string.Join(".", pathParts.Skip(1));
+			var fullTypeName = GetFullTypeName(e.Node.FullPath);
 			buttonCreate.Enabled = false;
+			listView.Items.Clear();
 
 			try
 			{
-				listView.Items.Clear();
-				var objType = _assembly.GetType(_objPath);
-				var ci = objType.GetConstructor(Type.EmptyTypes);
+				_assembly = Assembly.LoadFile(root.Name);
+				var objType = _assembly.GetType(fullTypeName);
 				if (!objType.IsClass && !objType.IsInterface) return;
-				if (ci != null && objType.IsAbstract == false)
+
+				var constructor = objType.GetConstructor(Type.EmptyTypes);
+				if (constructor != null && !objType.IsAbstract)
 					buttonCreate.Enabled = true;
+
 				foreach (var method in objType.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public))
 				{
 					var iconIndex = method.IsPublic ? 5 : 4;
@@ -190,7 +187,15 @@ namespace BinaryFilesReader
 
 		private void CreateClicked(object sender, EventArgs e)
 		{
-			CreatedInstances[_objPath] = _assembly.CreateInstance(_objPath);
+			var fullTypeName = GetFullTypeName(treeView.SelectedNode.FullPath);
+			CreatedInstances[fullTypeName] = _assembly.CreateInstance(fullTypeName);
+		}
+
+		private static string GetFullTypeName(string nodePath)
+		{
+			var pathParts = nodePath.Split('\\');
+			var fullTypeName = string.Join(".", pathParts.Skip(1));
+			return fullTypeName;
 		}
 
 		private void OpenInvokeMethodWindow(object sender, EventArgs e)
