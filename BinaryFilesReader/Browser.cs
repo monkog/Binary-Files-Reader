@@ -38,63 +38,60 @@ namespace BinaryFilesReader
 
 			try
 			{
-				Assembly assembly;
-				if ((assembly = Assembly.LoadFile(path)) != null)
+				var assembly = Assembly.LoadFile(path);
+				treeView.Nodes.Add(path, path.Substring(path.LastIndexOf("\\") + 1), 6, 6);
+				root = treeView.Nodes[treeView.Nodes.Count - 1];
+				var thisRoot = root;
+
+				foreach (var type in assembly.GetTypes())
 				{
-					treeView.Nodes.Add(path, path.Substring(path.LastIndexOf("\\") + 1), 6, 6);
-					root = treeView.Nodes[treeView.Nodes.Count - 1];
-					var thisRoot = root;
-
-					foreach (var type in assembly.GetTypes())
+					var typeNameParts = type.FullName.Split('.');
+					for (var i = typeNameParts.Length - 1; i >= 0; i--)
 					{
-						var c = type.FullName.Split('.');
-						for (var i = c.Length - 1; i >= 0; i--)
+						tn = treeView.Nodes.Find(typeNameParts[i], true);
+						if (tn.Length != 0)
 						{
-							tn = treeView.Nodes.Find(c[i], true);
-							if (tn.Length != 0)
+							root = tn[0];
+
+							for (var j = i + 1; j < typeNameParts.Length; j++)
 							{
-								root = tn[0];
-
-								for (var j = i + 1; j < c.Length; j++)
-								{
-									root.Nodes.Add(c[j]);
-									root = root.Nodes[root.Nodes.Count - 1];
-									root.Name = c[j];
-
-									var objPath = GetFullTypeName(root.FullPath);
-									var tmpType = assembly.GetType(objPath);
-									root.ImageIndex = GetTypeImageIndex(tmpType);
-									root.SelectedImageIndex = root.ImageIndex;
-								}
-								root = thisRoot;
-								break;
+								root = InitializeTypeNodes(root, typeNameParts[j], assembly);
 							}
+							root = thisRoot;
+							break;
+						}
 
-							if (i == 0)
+						if (i == 0)
+						{
+							for (var j = i; j < typeNameParts.Length; j++)
 							{
-								for (var j = i; j < c.Length; j++)
-								{
-									root.Nodes.Add(c[j]);
-									root = root.Nodes[root.Nodes.Count - 1];
-									root.Name = c[j];
-
-									var objPath = GetFullTypeName(root.FullPath);
-									var tmpType = assembly.GetType(objPath);
-									root.ImageIndex = GetTypeImageIndex(tmpType);
-									root.SelectedImageIndex = root.ImageIndex;
-								}
-								root = thisRoot;
-								break;
+								root = InitializeTypeNodes(root, typeNameParts[j], assembly);
 							}
+							root = thisRoot;
+							break;
 						}
 					}
 				}
+
 				buttonCreate.Enabled = false;
 			}
 			catch (Exception)
 			{
 				MessageBox.Show("File load failed.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+		}
+
+		private static TreeNode InitializeTypeNodes(TreeNode root, string typeName, Assembly assembly)
+		{
+			root.Nodes.Add(typeName);
+			root = root.Nodes[root.Nodes.Count - 1];
+			root.Name = typeName;
+
+			var objPath = GetFullTypeName(root.FullPath);
+			var tmpType = assembly.GetType(objPath);
+			root.ImageIndex = GetTypeImageIndex(tmpType);
+			root.SelectedImageIndex = root.ImageIndex;
+			return root;
 		}
 
 		private static int GetTypeImageIndex(Type tmpType)
