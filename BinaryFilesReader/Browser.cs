@@ -145,6 +145,7 @@ namespace BinaryFilesReader
 
 			var fullTypeName = GetFullTypeName(e.Node.FullPath);
 			buttonCreate.Enabled = false;
+			Methods.Clear();
 			listView.Items.Clear();
 
 			try
@@ -161,16 +162,16 @@ namespace BinaryFilesReader
 				{
 					var iconIndex = method.IsPublic ? 5 : 4;
 					var methodItem = new ListViewItem(method.Name) { ImageIndex = iconIndex, StateImageIndex = iconIndex };
-					listView.Items.Add(methodItem);
 					Methods.Add(methodItem, method);
 				}
-
-				listView.Sort();
 			}
 			catch (Exception)
 			{
-				listView.Items.Clear();
+				// temporarily ignore all issues
 			}
+
+			listView.Items.AddRange(Methods.Keys.ToArray());
+			listView.Sort();
 		}
 
 		private void CreateClicked(object sender, EventArgs e)
