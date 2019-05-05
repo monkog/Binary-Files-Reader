@@ -166,4 +166,7 @@
   <data name="SupportedAssemblyExtensions" xml:space="preserve">
     <value>.NET binaries (*.dll; *exe)|*.dll;*.exe</value>
   </data>
+  <data name="TypeIconNotSupported" xml:space="preserve">
+    <value>The provided type does not have a corresponding icon.</value>
+  </data>
 </root>

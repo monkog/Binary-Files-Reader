@@ -217,5 +217,14 @@ namespace BinaryFilesReader.Properties {
                 return ResourceManager.GetString("SupportedAssemblyExtensions", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The provided type does not have a corresponding icon..
+        /// </summary>
+        internal static string TypeIconNotSupported {
+            get {
+                return ResourceManager.GetString("TypeIconNotSupported", resourceCulture);
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace BinaryFilesReader
 {
@@ -33,6 +34,32 @@ namespace BinaryFilesReader
 			Icons2012.Images.Add(Properties.Resources.method_protectedvs11);
 			Icons2012.Images.Add(Properties.Resources.method_publicvs11);
 			Icons2012.Images.Add(Properties.Resources.namespacevs11);
+		}
+
+		/// <summary>
+		/// Gets the image index corresponding to the provided type.
+		/// </summary>
+		/// <param name="type">Object type.</param>
+		/// <returns>Index of the icon.</returns>
+		public static int GetTypeImageIndex(Type type)
+		{
+			if (type != null)
+			{
+				if (type.IsClass)
+					return type.IsSealed ? 0 : 1;
+				if (type.IsInterface)
+					return 2;
+				if (type.IsNotPublic)
+					return 3;
+				if (type.IsPublic)
+					return 5;
+				if (type.IsNestedPrivate)
+					return 4;
+			}
+			else
+				return 6;
+
+			throw new NotSupportedException(Properties.Resources.TypeIconNotSupported);
 		}
 	}
 }

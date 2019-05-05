@@ -50,6 +50,7 @@
     <Compile Include="Browser.Designer.cs">
       <DependentUpon>Browser.cs</DependentUpon>
     </Compile>
+    <Compile Include="DecompiledAssembly.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="IconsStyle.cs" />
     <Compile Include="InvokeWindow.cs">

@@ -9,6 +9,7 @@ namespace BinaryFilesReader
 {
 	public partial class Browser : Form
 	{
+		public Dictionary<string, DecompiledAssembly> Assemblies = new Dictionary<string, DecompiledAssembly>();
 		public Dictionary<ListViewItem, MethodInfo> Methods = new Dictionary<ListViewItem, MethodInfo>();
 		private Assembly _assembly;
 		public Dictionary<string, object> CreatedInstances = new Dictionary<string, object>();
@@ -25,37 +26,29 @@ namespace BinaryFilesReader
 		private void LoadFileClicked(object sender, EventArgs e)
 		{
 			var path = SelectAssemblyPath();
-			if (string.IsNullOrEmpty(path)) return;
-
-			TreeNode root;
-			var tn = treeView.Nodes.Find(path, false);
-
-			if (tn.Length != 0)
-			{
-				root = tn[0];
-				root.Remove();
-			}
+			if (string.IsNullOrEmpty(path) || Assemblies.ContainsKey(path)) return;
 
 			try
 			{
-				var assembly = Assembly.LoadFile(path);
-				treeView.Nodes.Add(path, path.Substring(path.LastIndexOf("\\") + 1), 6, 6);
-				root = treeView.Nodes[treeView.Nodes.Count - 1];
+				var assembly = new DecompiledAssembly(path);
+				Assemblies[path] = assembly;
+
+				var root = treeView.Nodes.Add(path, path.Substring(path.LastIndexOf('\\') + 1), 6, 6);
 				var thisRoot = root;
 
-				foreach (var type in assembly.GetTypes())
+				foreach (var type in assembly.Types)
 				{
-					var typeNameParts = type.FullName.Split('.');
+					var typeNameParts = type.Split('.');
 					for (var i = typeNameParts.Length - 1; i >= 0; i--)
 					{
-						tn = treeView.Nodes.Find(typeNameParts[i], true);
+						var tn = treeView.Nodes.Find(typeNameParts[i], true);
 						if (tn.Length != 0)
 						{
 							root = tn[0];
 
 							for (var j = i + 1; j < typeNameParts.Length; j++)
 							{
-								root = InitializeTypeNodes(root, typeNameParts[j], assembly);
+								root = InitializeTypeNodes(root, typeNameParts[j], assembly.Assembly);
 							}
 							root = thisRoot;
 							break;
@@ -65,7 +58,7 @@ namespace BinaryFilesReader
 						{
 							for (var j = i; j < typeNameParts.Length; j++)
 							{
-								root = InitializeTypeNodes(root, typeNameParts[j], assembly);
+								root = InitializeTypeNodes(root, typeNameParts[j], assembly.Assembly);
 							}
 							root = thisRoot;
 							break;
@@ -75,9 +68,9 @@ namespace BinaryFilesReader
 
 				buttonCreate.Enabled = false;
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
-				MessageBox.Show("File load failed.", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show($"File load failed. {exception.Message + exception.InnerException?.Message}", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 
@@ -88,31 +81,18 @@ namespace BinaryFilesReader
 			root.Name = typeName;
 
 			var objPath = GetFullTypeName(root.FullPath);
-			var tmpType = assembly.GetType(objPath);
-			root.ImageIndex = GetTypeImageIndex(tmpType);
-			root.SelectedImageIndex = root.ImageIndex;
-			return root;
-		}
-
-		private static int GetTypeImageIndex(Type tmpType)
-		{
-			if (tmpType != null)
+			try
 			{
-				if (tmpType.IsClass)
-					return tmpType.IsSealed ? 0 : 1;
-				if (tmpType.IsInterface)
-					return 2;
-				if (tmpType.IsNotPublic)
-					return 3;
-				if (tmpType.IsPublic)
-					return 5;
-				if (tmpType.IsNestedPrivate)
-					return 4;
+				var tmpType = assembly.GetType(objPath);
+				root.ImageIndex = IconsStyle.GetTypeImageIndex(tmpType);
+				root.SelectedImageIndex = root.ImageIndex;
 			}
-			else
-				return 6;
+			catch (NotSupportedException e)
+			{
+				Console.WriteLine($"Handle the not supported exception. {e.Message}");
+			}
 
-			throw new NotSupportedException();
+			return root;
 		}
 
 		private static string SelectAssemblyPath()
