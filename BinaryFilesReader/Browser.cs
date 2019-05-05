@@ -48,7 +48,7 @@ namespace BinaryFilesReader
 
 							for (var j = i + 1; j < typeNameParts.Length; j++)
 							{
-								root = InitializeTypeNodes(root, typeNameParts[j], assembly.Assembly);
+								root = InitializeTypeNode(root, typeNameParts[j], assembly.Assembly);
 							}
 							root = thisRoot;
 							break;
@@ -58,7 +58,7 @@ namespace BinaryFilesReader
 						{
 							for (var j = i; j < typeNameParts.Length; j++)
 							{
-								root = InitializeTypeNodes(root, typeNameParts[j], assembly.Assembly);
+								root = InitializeTypeNode(root, typeNameParts[j], assembly.Assembly);
 							}
 							root = thisRoot;
 							break;
@@ -74,25 +74,24 @@ namespace BinaryFilesReader
 			}
 		}
 
-		private static TreeNode InitializeTypeNodes(TreeNode root, string typeName, Assembly assembly)
+		private static TreeNode InitializeTypeNode(TreeNode root, string typeName, Assembly assembly)
 		{
-			root.Nodes.Add(typeName);
-			root = root.Nodes[root.Nodes.Count - 1];
-			root.Name = typeName;
+			var node = root.Nodes.Add(typeName);
+			node.Name = typeName;
 
-			var objPath = GetFullTypeName(root.FullPath);
+			var objPath = GetFullTypeName(node.FullPath);
 			try
 			{
 				var type = assembly.GetType(objPath);
-				root.ImageIndex = IconsStyle.GetTypeImageIndex(type);
-				root.SelectedImageIndex = root.ImageIndex;
+				node.ImageIndex = IconsStyle.GetTypeImageIndex(type);
+				node.SelectedImageIndex = node.ImageIndex;
 			}
-			catch (NotSupportedException e)
+			catch (NotSupportedException)
 			{
-				Console.WriteLine($"Handle the not supported exception. {e.Message}");
+				root.Nodes.Remove(node);
 			}
 
-			return root;
+			return node;
 		}
 
 		private static string SelectAssemblyPath()
