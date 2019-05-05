@@ -61,6 +61,15 @@ namespace BinaryFilesReader.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid argument type. Argument should be of type ListViewItem..
+        /// </summary>
+        internal static string ArgumentShouldBeOfTypeListViewItem {
+            get {
+                return ResourceManager.GetString("ArgumentShouldBeOfTypeListViewItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap class_sealedvs10 {

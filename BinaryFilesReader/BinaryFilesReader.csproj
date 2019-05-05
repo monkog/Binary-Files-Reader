@@ -59,6 +59,7 @@
     <Compile Include="InvokeWindow.Designer.cs">
       <DependentUpon>InvokeWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListViewItemComparer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Browser.resx">

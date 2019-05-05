@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -196,14 +195,6 @@ namespace BinaryFilesReader
 			listToolStripMenuItem.Checked = true;
 			detailsToolStripMenuItem.Checked = false;
 			listView.View = View.List;
-		}
-	}
-
-	internal class ListViewItemComparer : IComparer
-	{
-		public int Compare(object x, object y)
-		{
-			return String.Compare(((ListViewItem)x).Text, ((ListViewItem)y).Text);
 		}
 	}
 }

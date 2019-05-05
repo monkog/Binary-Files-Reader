@@ -169,4 +169,7 @@
   <data name="ObjectIconNotSupported" xml:space="preserve">
     <value>The provided object does not have a corresponding icon.</value>
   </data>
+  <data name="ArgumentShouldBeOfTypeListViewItem" xml:space="preserve">
+    <value>Invalid argument type. Argument should be of type ListViewItem.</value>
+  </data>
 </root>
