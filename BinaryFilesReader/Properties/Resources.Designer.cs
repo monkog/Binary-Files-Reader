@@ -235,5 +235,14 @@ namespace BinaryFilesReader.Properties {
                 return ResourceManager.GetString("SupportedAssemblyExtensions", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Provided type definition does not exist in the current assembly..
+        /// </summary>
+        internal static string TypeNotDefinedInAssembly {
+            get {
+                return ResourceManager.GetString("TypeNotDefinedInAssembly", resourceCulture);
+            }
+        }
     }
 }

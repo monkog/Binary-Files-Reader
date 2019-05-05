@@ -11,7 +11,6 @@ namespace BinaryFilesReader
 		public Dictionary<string, DecompiledAssembly> Assemblies = new Dictionary<string, DecompiledAssembly>();
 		public Dictionary<ListViewItem, MethodInfo> Methods = new Dictionary<ListViewItem, MethodInfo>();
 		private Assembly _assembly;
-		public Dictionary<string, object> CreatedInstances = new Dictionary<string, object>();
 
 		public Browser()
 		{
@@ -152,7 +151,7 @@ namespace BinaryFilesReader
 		private void CreateClicked(object sender, EventArgs e)
 		{
 			var fullTypeName = GetFullTypeName(treeView.SelectedNode.FullPath);
-			CreatedInstances[fullTypeName] = _assembly.CreateInstance(fullTypeName);
+			Assemblies[_assembly.Location].Instantiate(fullTypeName);
 		}
 
 		private static string GetFullTypeName(string nodePath)
@@ -165,7 +164,8 @@ namespace BinaryFilesReader
 		private void OpenInvokeMethodWindow(object sender, EventArgs e)
 		{
 			if (listView.SelectedItems.Count == 0) return;
-			var invokeWindow = new InvokeWindow(Methods[listView.SelectedItems[0]], CreatedInstances.Values) { Owner = this };
+			var createdInstances = Assemblies.Values.SelectMany(a => a.Instances.Values);
+			var invokeWindow = new InvokeWindow(Methods[listView.SelectedItems[0]], createdInstances) { Owner = this };
 			invokeWindow.ShowDialog();
 		}
 

@@ -172,4 +172,7 @@
   <data name="ArgumentShouldBeOfTypeListViewItem" xml:space="preserve">
     <value>Invalid argument type. Argument should be of type ListViewItem.</value>
   </data>
+  <data name="TypeNotDefinedInAssembly" xml:space="preserve">
+    <value>Provided type definition does not exist in the current assembly.</value>
+  </data>
 </root>

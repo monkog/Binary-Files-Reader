@@ -47,6 +47,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DecompiledAssemblyTests.cs" />
     <Compile Include="Extensions\TypeExtensionsTests.cs" />
     <Compile Include="IconsStyleTests.cs" />
     <Compile Include="ListViewItemComparerTests.cs" />
