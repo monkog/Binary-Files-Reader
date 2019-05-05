@@ -210,20 +210,20 @@ namespace BinaryFilesReader.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The provided object does not have a corresponding icon..
+        /// </summary>
+        internal static string ObjectIconNotSupported {
+            get {
+                return ResourceManager.GetString("ObjectIconNotSupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .NET binaries (*.dll; *exe)|*.dll;*.exe.
         /// </summary>
         internal static string SupportedAssemblyExtensions {
             get {
                 return ResourceManager.GetString("SupportedAssemblyExtensions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The provided type does not have a corresponding icon..
-        /// </summary>
-        internal static string TypeIconNotSupported {
-            get {
-                return ResourceManager.GetString("TypeIconNotSupported", resourceCulture);
             }
         }
     }

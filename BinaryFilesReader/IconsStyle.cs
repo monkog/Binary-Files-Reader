@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace BinaryFilesReader
@@ -59,7 +60,20 @@ namespace BinaryFilesReader
 			else
 				return 6;
 
-			throw new NotSupportedException(Properties.Resources.TypeIconNotSupported);
+			throw new NotSupportedException(Properties.Resources.ObjectIconNotSupported);
+		}
+
+		/// <summary>
+		/// Gets the image index corresponding to the provided method info.
+		/// </summary>
+		/// <param name="method">Method info.</param>
+		/// <returns>Index of the icon.</returns>
+		public static int GetMethodImageIndex(MethodInfo method)
+		{
+			if (method.IsPrivate)
+				return 3;
+
+			return method.IsPublic ? 5 : 4;
 		}
 	}
 }

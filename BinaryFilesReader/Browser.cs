@@ -83,8 +83,8 @@ namespace BinaryFilesReader
 			var objPath = GetFullTypeName(root.FullPath);
 			try
 			{
-				var tmpType = assembly.GetType(objPath);
-				root.ImageIndex = IconsStyle.GetTypeImageIndex(tmpType);
+				var type = assembly.GetType(objPath);
+				root.ImageIndex = IconsStyle.GetTypeImageIndex(type);
 				root.SelectedImageIndex = root.ImageIndex;
 			}
 			catch (NotSupportedException e)
@@ -137,7 +137,7 @@ namespace BinaryFilesReader
 
 				foreach (var method in objType.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public))
 				{
-					var iconIndex = method.IsPublic ? 5 : 4;
+					var iconIndex = IconsStyle.GetMethodImageIndex(method);
 					var methodItem = new ListViewItem(method.Name) { ImageIndex = iconIndex, StateImageIndex = iconIndex };
 					Methods.Add(methodItem, method);
 				}
