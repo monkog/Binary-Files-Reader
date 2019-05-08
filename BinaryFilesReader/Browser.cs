@@ -34,29 +34,6 @@ namespace BinaryFilesReader
 			buttonCreate.Enabled = false;
 		}
 
-		private void CreateAssemblyTree(string path, DecompiledAssembly assembly)
-		{
-			var root = treeView.Nodes.Add(path, path.Substring(path.LastIndexOf('\\') + 1), 6, 6);
-
-			foreach (var assemblyType in assembly.Types)
-			{
-				var typeRoot = root;
-				var typeNameParts = assemblyType.Split('.');
-
-				foreach (var type in typeNameParts)
-				{
-					var foundNodes = typeRoot.Nodes.Find(type, false);
-					if (foundNodes.Any())
-					{
-						typeRoot = foundNodes.Single();
-						continue;
-					}
-
-					typeRoot = InitializeTypeNode(typeRoot, type, assembly.Assembly);
-				}
-			}
-		}
-
 		private static bool TryOpenAssembly(string path, out DecompiledAssembly assembly)
 		{
 			assembly = null;
@@ -87,6 +64,29 @@ namespace BinaryFilesReader
 			return true;
 		}
 
+		private void CreateAssemblyTree(string path, DecompiledAssembly assembly)
+		{
+			var root = treeView.Nodes.Add(path, path.Substring(path.LastIndexOf('\\') + 1), 6, 6);
+
+			foreach (var assemblyType in assembly.Types)
+			{
+				var typeRoot = root;
+				var typeNameParts = assemblyType.Split('.');
+
+				foreach (var type in typeNameParts)
+				{
+					var foundNodes = typeRoot.Nodes.Find(type, false);
+					if (foundNodes.Any())
+					{
+						typeRoot = foundNodes.Single();
+						continue;
+					}
+
+					typeRoot = InitializeTypeNode(typeRoot, type, assembly.Assembly);
+				}
+			}
+		}
+
 		private static TreeNode InitializeTypeNode(TreeNode root, string typeName, Assembly assembly)
 		{
 			var node = root.Nodes.Add(typeName);
@@ -112,11 +112,6 @@ namespace BinaryFilesReader
 			var openFileDialog = new OpenFileDialog { Filter = Properties.Resources.SupportedAssemblyExtensions };
 			openFileDialog.ShowDialog();
 			return openFileDialog.FileName;
-		}
-
-		private void ExitClicked(object sender, EventArgs e)
-		{
-			Close();
 		}
 
 		private void AssemblyObjectSelected(object sender, TreeViewEventArgs e)
@@ -210,6 +205,11 @@ namespace BinaryFilesReader
 			listToolStripMenuItem.Checked = true;
 			detailsToolStripMenuItem.Checked = false;
 			listView.View = View.List;
+		}
+
+		private void ExitClicked(object sender, EventArgs e)
+		{
+			Close();
 		}
 	}
 }
