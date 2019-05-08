@@ -175,4 +175,13 @@
   <data name="TypeNotDefinedInAssembly" xml:space="preserve">
     <value>Provided type definition does not exist in the current assembly.</value>
   </data>
+  <data name="CannotLoadAssembly" xml:space="preserve">
+	  <value>File {0} could not be loaded. {1}</value>
+  </data>
+  <data name="InvalidAssemblyOrCLRVersion" xml:space="preserve">
+	  <value>File {0} is not a valid assembly or was compiled with an incompatible version with current CLR. {1}</value>
+  </data>
+  <data name="TypesCouldNotBeLoaded" xml:space="preserve">
+	  <value>File {0} contains one or more types that could not be loaded. {1}</value>
+  </data>
 </root>

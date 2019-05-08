@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using BinaryFilesReader.Properties;
 
 namespace BinaryFilesReader
 {
@@ -26,50 +28,73 @@ namespace BinaryFilesReader
 			var path = SelectAssemblyPath();
 			if (string.IsNullOrEmpty(path) || Assemblies.ContainsKey(path)) return;
 
-			try
+			if (!TryOpenAssembly(path, out var assembly)) return;
+			Assemblies[path] = assembly;
+
+			var root = treeView.Nodes.Add(path, path.Substring(path.LastIndexOf('\\') + 1), 6, 6);
+			var thisRoot = root;
+
+			foreach (var type in assembly.Types)
 			{
-				var assembly = new DecompiledAssembly(path);
-				Assemblies[path] = assembly;
-
-				var root = treeView.Nodes.Add(path, path.Substring(path.LastIndexOf('\\') + 1), 6, 6);
-				var thisRoot = root;
-
-				foreach (var type in assembly.Types)
+				var typeNameParts = type.Split('.');
+				for (var i = typeNameParts.Length - 1; i >= 0; i--)
 				{
-					var typeNameParts = type.Split('.');
-					for (var i = typeNameParts.Length - 1; i >= 0; i--)
+					var tn = treeView.Nodes.Find(typeNameParts[i], true);
+					if (tn.Length != 0)
 					{
-						var tn = treeView.Nodes.Find(typeNameParts[i], true);
-						if (tn.Length != 0)
-						{
-							root = tn[0];
+						root = tn[0];
 
-							for (var j = i + 1; j < typeNameParts.Length; j++)
-							{
-								root = InitializeTypeNode(root, typeNameParts[j], assembly.Assembly);
-							}
-							root = thisRoot;
-							break;
-						}
-
-						if (i == 0)
+						for (var j = i + 1; j < typeNameParts.Length; j++)
 						{
-							for (var j = i; j < typeNameParts.Length; j++)
-							{
-								root = InitializeTypeNode(root, typeNameParts[j], assembly.Assembly);
-							}
-							root = thisRoot;
-							break;
+							root = InitializeTypeNode(root, typeNameParts[j], assembly.Assembly);
 						}
+						root = thisRoot;
+						break;
+					}
+
+					if (i == 0)
+					{
+						for (var j = i; j < typeNameParts.Length; j++)
+						{
+							root = InitializeTypeNode(root, typeNameParts[j], assembly.Assembly);
+						}
+						root = thisRoot;
+						break;
 					}
 				}
+			}
 
-				buttonCreate.Enabled = false;
-			}
-			catch (Exception exception)
+			buttonCreate.Enabled = false;
+		}
+
+		private static bool TryOpenAssembly(string path, out DecompiledAssembly assembly)
+		{
+			assembly = null;
+
+			try
 			{
-				MessageBox.Show($"File load failed. {exception.Message + exception.InnerException?.Message}", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				assembly = new DecompiledAssembly(path);
 			}
+			catch (FileLoadException exception)
+			{
+				var text = string.Format(Resources.CannotLoadAssembly, path, exception.Message + exception.InnerException?.Message);
+				MessageBox.Show(text, null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return false;
+			}
+			catch (BadImageFormatException exception)
+			{
+				var text = string.Format(Resources.InvalidAssemblyOrCLRVersion, path, exception.Message + exception.InnerException?.Message);
+				MessageBox.Show(text, null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return false;
+			}
+			catch (ReflectionTypeLoadException exception)
+			{
+				var text = string.Format(Resources.TypesCouldNotBeLoaded, path, exception.Message + exception.InnerException?.Message);
+				MessageBox.Show(text, null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return false;
+			}
+
+			return true;
 		}
 
 		private static TreeNode InitializeTypeNode(TreeNode root, string typeName, Assembly assembly)

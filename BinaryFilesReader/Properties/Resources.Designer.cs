@@ -70,6 +70,15 @@ namespace BinaryFilesReader.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File {0} could not be loaded. {1}.
+        /// </summary>
+        internal static string CannotLoadAssembly {
+            get {
+                return ResourceManager.GetString("CannotLoadAssembly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap class_sealedvs10 {
@@ -126,6 +135,15 @@ namespace BinaryFilesReader.Properties {
             get {
                 object obj = ResourceManager.GetObject("interfacevs11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File {0} is not a valid assembly or was compiled with an incompatible version with current CLR. {1}.
+        /// </summary>
+        internal static string InvalidAssemblyOrCLRVersion {
+            get {
+                return ResourceManager.GetString("InvalidAssemblyOrCLRVersion", resourceCulture);
             }
         }
         
@@ -242,6 +260,15 @@ namespace BinaryFilesReader.Properties {
         internal static string TypeNotDefinedInAssembly {
             get {
                 return ResourceManager.GetString("TypeNotDefinedInAssembly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File {0} contains one or more types that could not be loaded. {1}.
+        /// </summary>
+        internal static string TypesCouldNotBeLoaded {
+            get {
+                return ResourceManager.GetString("TypesCouldNotBeLoaded", resourceCulture);
             }
         }
     }
