@@ -30,41 +30,31 @@ namespace BinaryFilesReader
 
 			if (!TryOpenAssembly(path, out var assembly)) return;
 			Assemblies[path] = assembly;
+			CreateAssemblyTree(path, assembly);
+			buttonCreate.Enabled = false;
+		}
 
+		private void CreateAssemblyTree(string path, DecompiledAssembly assembly)
+		{
 			var root = treeView.Nodes.Add(path, path.Substring(path.LastIndexOf('\\') + 1), 6, 6);
-			var thisRoot = root;
 
-			foreach (var type in assembly.Types)
+			foreach (var assemblyType in assembly.Types)
 			{
-				var typeNameParts = type.Split('.');
-				for (var i = typeNameParts.Length - 1; i >= 0; i--)
+				var typeRoot = root;
+				var typeNameParts = assemblyType.Split('.');
+
+				foreach (var type in typeNameParts)
 				{
-					var tn = treeView.Nodes.Find(typeNameParts[i], true);
-					if (tn.Length != 0)
+					var foundNodes = typeRoot.Nodes.Find(type, false);
+					if (foundNodes.Any())
 					{
-						root = tn[0];
-
-						for (var j = i + 1; j < typeNameParts.Length; j++)
-						{
-							root = InitializeTypeNode(root, typeNameParts[j], assembly.Assembly);
-						}
-						root = thisRoot;
-						break;
+						typeRoot = foundNodes.Single();
+						continue;
 					}
 
-					if (i == 0)
-					{
-						for (var j = i; j < typeNameParts.Length; j++)
-						{
-							root = InitializeTypeNode(root, typeNameParts[j], assembly.Assembly);
-						}
-						root = thisRoot;
-						break;
-					}
+					typeRoot = InitializeTypeNode(typeRoot, type, assembly.Assembly);
 				}
 			}
-
-			buttonCreate.Enabled = false;
 		}
 
 		private static bool TryOpenAssembly(string path, out DecompiledAssembly assembly)
