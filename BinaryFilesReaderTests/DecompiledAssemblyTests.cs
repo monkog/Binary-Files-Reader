@@ -29,7 +29,8 @@ namespace BinaryFilesReaderTests
 		[Test]
 		public void Types_NoParams_ContainsDefinedTypes()
 		{
-			CollectionAssert.Contains(_unitUnderTest.Types, _className);
+			CollectionAssert.Contains(_unitUnderTest.Types.Keys, _className);
+			Assert.AreEqual(typeof(DecompiledAssemblyTests), _unitUnderTest.Types[_className]);
 		}
 
 		[Test]

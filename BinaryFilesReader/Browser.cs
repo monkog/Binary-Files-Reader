@@ -68,7 +68,7 @@ namespace BinaryFilesReader
 		{
 			var root = treeView.Nodes.Add(path, path.Substring(path.LastIndexOf('\\') + 1), 6, 6);
 
-			foreach (var assemblyType in assembly.Types)
+			foreach (var assemblyType in assembly.Types.Keys)
 			{
 				var typeRoot = root;
 				var typeNameParts = assemblyType.Split('.');
@@ -132,17 +132,21 @@ namespace BinaryFilesReader
 			Methods.Clear();
 			listView.Items.Clear();
 
+			var assembly = Assemblies[root.Name];
+			_assembly = assembly.Assembly;
+
+			if (!assembly.Types.ContainsKey(fullTypeName)) return;
+
+			var type = assembly.Types[fullTypeName];
+			if (!type.IsClass && !type.IsInterface) return;
+
 			try
 			{
-				_assembly = Assembly.LoadFile(root.Name);
-				var objType = _assembly.GetType(fullTypeName);
-				if (!objType.IsClass && !objType.IsInterface) return;
-
-				var constructor = objType.GetConstructor(Type.EmptyTypes);
-				if (constructor != null && !objType.IsAbstract)
+				var constructor = type.GetConstructor(Type.EmptyTypes);
+				if (constructor != null && !type.IsAbstract)
 					buttonCreate.Enabled = true;
 
-				foreach (var method in objType.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public))
+				foreach (var method in type.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public))
 				{
 					var iconIndex = IconsStyle.GetMethodImageIndex(method);
 					var methodItem = new ListViewItem(method.Name) { ImageIndex = iconIndex, StateImageIndex = iconIndex };

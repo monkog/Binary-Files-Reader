@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -16,7 +15,7 @@ namespace BinaryFilesReader
 		/// <summary>
 		/// Gets the collection of available types.
 		/// </summary>
-		public IEnumerable<string> Types { get; }
+		public Dictionary<string, Type> Types { get; }
 
 		public Dictionary<ListViewItem, MethodInfo> Methods { get; }
 
@@ -28,8 +27,13 @@ namespace BinaryFilesReader
 		public DecompiledAssembly(string path)
 		{
 			Assembly = Assembly.LoadFile(path);
-			Types = Assembly.GetTypes().Select(t => t.FullName);
+			Types =new Dictionary<string, Type>();
 			Instances = new Dictionary<string, object>();
+
+			foreach (var type in Assembly.GetTypes())
+			{
+				Types.Add(type.FullName, type);
+			}
 		}
 
 		/// <summary>
@@ -38,7 +42,7 @@ namespace BinaryFilesReader
 		/// <param name="typeName">Name of the object to instantiate.</param>
 		public void Instantiate(string typeName)
 		{
-			if(!Types.Contains(typeName))
+			if(!Types.ContainsKey(typeName))
 				throw new ArgumentException(Properties.Resources.TypeNotDefinedInAssembly);
 
 			Instances[typeName] = Assembly.CreateInstance(typeName);
