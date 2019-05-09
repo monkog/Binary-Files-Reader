@@ -24,6 +24,7 @@ namespace BinaryFilesReaderTests
 			Assert.IsNotNull(_unitUnderTest.Assembly);
 			Assert.IsNotNull(_unitUnderTest.Instances);
 			Assert.IsNotNull(_unitUnderTest.Types);
+			Assert.IsNotNull(_unitUnderTest.Methods);
 		}
 
 		[Test]
@@ -52,6 +53,27 @@ namespace BinaryFilesReaderTests
 			void Instantiate() => _unitUnderTest.Instantiate(_className + _className);
 
 			Assert.Throws<ArgumentException>(Instantiate);
+		}
+
+		[Test]
+		public void InitializeMethodsForType_ValidType_MethodCollectionAssigned()
+		{
+			var type = typeof(DecompiledAssemblyTests);
+			_unitUnderTest.InitializeMethodsForType(type);
+
+			var contains = _unitUnderTest.Methods.ContainsKey(type);
+			var methods = _unitUnderTest.Methods[type];
+
+			Assert.IsTrue(contains);
+			Assert.IsNotNull(methods);
+		}
+
+		[Test]
+		public void InitializeMethodsForType_InvalidType_ExceptionThrown()
+		{
+			void Initialize() => _unitUnderTest.InitializeMethodsForType(typeof(DecompiledAssembly));
+
+			Assert.Throws<ArgumentException>(Initialize);
 		}
 	}
 }

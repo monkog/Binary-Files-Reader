@@ -11,7 +11,6 @@ namespace BinaryFilesReader
 	public partial class Browser : Form
 	{
 		public Dictionary<string, DecompiledAssembly> Assemblies = new Dictionary<string, DecompiledAssembly>();
-		public Dictionary<ListViewItem, MethodInfo> Methods = new Dictionary<ListViewItem, MethodInfo>();
 		private Assembly _assembly;
 
 		public Browser()
@@ -109,7 +108,7 @@ namespace BinaryFilesReader
 
 		private static string SelectAssemblyPath()
 		{
-			var openFileDialog = new OpenFileDialog { Filter = Properties.Resources.SupportedAssemblyExtensions };
+			var openFileDialog = new OpenFileDialog { Filter = Resources.SupportedAssemblyExtensions };
 			openFileDialog.ShowDialog();
 			return openFileDialog.FileName;
 		}
@@ -119,6 +118,30 @@ namespace BinaryFilesReader
 			var pathParts = e.Node.FullPath.Split('\\');
 			if (pathParts.Length == 1) return;
 
+			var root = FindRootForType(pathParts);
+			buttonCreate.Enabled = false;
+			listView.Items.Clear();
+
+			var assembly = Assemblies[root.Name];
+			_assembly = assembly.Assembly;
+
+			var fullTypeName = GetFullTypeName(e.Node.FullPath);
+			if (!assembly.Types.ContainsKey(fullTypeName)) return;
+
+			var type = assembly.Types[fullTypeName];
+			if (!type.IsClass && !type.IsInterface) return;
+
+			var constructor = type.GetConstructor(Type.EmptyTypes);
+			if (constructor != null && !type.IsAbstract)
+				buttonCreate.Enabled = true;
+
+			var items = InitializeMethodItems(assembly, type);
+			listView.Items.AddRange(items.ToArray());
+			listView.Sort();
+		}
+
+		private TreeNode FindRootForType(string[] pathParts)
+		{
 			TreeNode root = null;
 			foreach (TreeNode treeNode in treeView.Nodes)
 				if (treeNode.Text == pathParts[0])
@@ -127,39 +150,26 @@ namespace BinaryFilesReader
 					break;
 				}
 
-			var fullTypeName = GetFullTypeName(e.Node.FullPath);
-			buttonCreate.Enabled = false;
-			Methods.Clear();
-			listView.Items.Clear();
+			return root;
+		}
 
-			var assembly = Assemblies[root.Name];
-			_assembly = assembly.Assembly;
+		private static List<ListViewItem> InitializeMethodItems(DecompiledAssembly assembly, Type type)
+		{
+			if (!assembly.Methods.ContainsKey(type))
+				assembly.InitializeMethodsForType(type);
 
-			if (!assembly.Types.ContainsKey(fullTypeName)) return;
+			var methods = assembly.Methods[type];
+			var items = new List<ListViewItem>();
 
-			var type = assembly.Types[fullTypeName];
-			if (!type.IsClass && !type.IsInterface) return;
-
-			try
+			foreach (var method in methods)
 			{
-				var constructor = type.GetConstructor(Type.EmptyTypes);
-				if (constructor != null && !type.IsAbstract)
-					buttonCreate.Enabled = true;
-
-				foreach (var method in type.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public))
-				{
-					var iconIndex = IconsStyle.GetMethodImageIndex(method);
-					var methodItem = new ListViewItem(method.Name) { ImageIndex = iconIndex, StateImageIndex = iconIndex };
-					Methods.Add(methodItem, method);
-				}
-			}
-			catch (Exception)
-			{
-				// temporarily ignore all issues
+				var iconIndex = IconsStyle.GetMethodImageIndex(method);
+				var methodItem = new ListViewItem(method.Name)
+					{ImageIndex = iconIndex, StateImageIndex = iconIndex, Tag = method};
+				items.Add(methodItem);
 			}
 
-			listView.Items.AddRange(Methods.Keys.ToArray());
-			listView.Sort();
+			return items;
 		}
 
 		private void CreateClicked(object sender, EventArgs e)
@@ -179,7 +189,7 @@ namespace BinaryFilesReader
 		{
 			if (listView.SelectedItems.Count == 0) return;
 			var createdInstances = Assemblies.Values.SelectMany(a => a.Instances.Values);
-			var invokeWindow = new InvokeWindow(Methods[listView.SelectedItems[0]], createdInstances) { Owner = this };
+			var invokeWindow = new InvokeWindow(listView.SelectedItems[0].Tag as MethodBase, createdInstances) { Owner = this };
 			invokeWindow.ShowDialog();
 		}
 

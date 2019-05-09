@@ -43,3 +43,4 @@ obj/
 packages/
 
 *.DotSettings.user
+*.coverage
