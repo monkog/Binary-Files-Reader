@@ -117,49 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="classvs10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2010\classvs10.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="classvs11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2012\classvs11.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="class_sealedvs10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2010\class_sealedvs10.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="class_sealedvs11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2012\class_sealedvs11.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="interfacevs10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2010\interfacevs10.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="interfacevs11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2012\interfacevs11.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="method_privatevs10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2010\method_privatevs10.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="method_privatevs11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2012\method_privatevs11.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="method_protectedvs10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2010\method_protectedvs10.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="method_protectedvs11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2012\method_protectedvs11.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="method_publicvs10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2010\method_publicvs10.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="method_publicvs11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2012\method_publicvs11.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="namespacevs10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2010\namespacevs10.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="namespacevs11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2012\namespacevs11.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="InvocationResultWindowTitle" xml:space="preserve">
     <value>Result of {0} method.</value>
   </data>
@@ -176,12 +133,265 @@
     <value>Provided type definition does not exist in the current assembly.</value>
   </data>
   <data name="CannotLoadAssembly" xml:space="preserve">
-	  <value>File {0} could not be loaded. {1}</value>
+    <value>File {0} could not be loaded. {1}</value>
   </data>
   <data name="InvalidAssemblyOrCLRVersion" xml:space="preserve">
-	  <value>File {0} is not a valid assembly or was compiled with an incompatible version with current CLR. {1}</value>
+    <value>File {0} is not a valid assembly or was compiled with an incompatible version with current CLR. {1}</value>
   </data>
   <data name="TypesCouldNotBeLoaded" xml:space="preserve">
-	  <value>File {0} contains one or more types that could not be loaded. {1}</value>
+    <value>File {0} contains one or more types that could not be loaded. {1}</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ClassIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\ClassIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClassPrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\ClassPrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClassProtected_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\ClassProtected_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClassSealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\ClassSealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Class_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\Class_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Class_Private_493" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Class-Private_493.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Class_Protected_492" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Class-Protected_492.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Class_Sealed_490" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Class-Sealed_490.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConstantPrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\ConstantPrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConstantProtected_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\ConstantProtected_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConstantSealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\ConstantSealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Constant_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\Constant_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Constant_495" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Constant_495.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Constant_Private_519" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Constant-Private_519.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Constant_Protected_508" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Constant-Protected_508.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Constant_Sealed_496" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Constant-Sealed_496.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DelegatePrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\DelegatePrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DelegateProtected_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\DelegateProtected_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DelegateSealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\DelegateSealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delegate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\Delegate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delegate_540" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Delegate_540.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delegate_Private_580" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Delegate-Private_580.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delegate_Protected_573" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Delegate-Protected_573.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delegate_Sealed_551" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Delegate-Sealed_551.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Enumerator_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\Enumerator_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumPrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\EnumPrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumProtect_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\EnumProtect_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumSealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\EnumSealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Enum_582" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Enum_582.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Enum_Private_586" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Enum-Private_586.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Enum_Protected_585" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Enum-Protected_585.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Enum_Sealed_583" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Enum-Sealed_583.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EventPrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\EventPrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EventProtect_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\EventProtect_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EventSealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\EventSealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Event_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\Event_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Event_594" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Event_594.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Event_Private_598" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Event-Private_598.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Event_Protected_597" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Event-Protected_597.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Event_Sealed_595" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Event-Sealed_595.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FieldIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\FieldIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FieldPrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\FieldPrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FieldProtect_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\FieldProtect_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FieldSealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\FieldSealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Field_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\Field_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Field_Private_545" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Field-Private_545.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Field_Protected_544" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Field-Protected_544.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Field_Sealed_542" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Field-Sealed_542.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InterfacePrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\InterfacePrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InterfaceProtect_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\InterfaceProtect_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Interface_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\Interface_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Interface_612" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Interface_612.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Interface_Private_616" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Interface-Private_616.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Interface_Protected_615" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Interface-Protected_615.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Library_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\Library_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Library_6213" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Library_6213.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MethodPrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\MethodPrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MethodProtect_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\MethodProtect_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Method_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\Method_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Method_636" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Method_636.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Method_Private_640" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Method-Private_640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Method_Protected_639" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Method-Protected_639.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Namespace_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\Namespace_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Namespace_654" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Namespace_654.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OperatorPrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\OperatorPrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OperatorProtect_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\OperatorProtect_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OperatorSealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\OperatorSealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Operator_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\Operator_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Operator_660" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Operator_660.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Operator_Private_499" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Operator-Private_499.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Operator_Protected_498" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Operator-Protected_498.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Operator_Sealed_661" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Operator-Sealed_661.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PropertyIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\PropertyIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PropertyPrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\PropertyPrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Property_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\Property_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Property_Private_505" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Property-Private_505.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StructurePrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\StructurePrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StructureProtect_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\StructureProtect_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StructureSealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\StructureSealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Structure_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2017\Structure_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Structure_507" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Structure_507.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Structure_Private_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Structure-Private_512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Structure_Protected_511" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Structure-Protected_511.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Structure_Sealed_509" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Structure-Sealed_509.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -70,18 +70,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -114,25 +114,274 @@
     <None Include="icons\vs2010\namespacevs10.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="icons\vs2012\class_sealedvs11.bmp" />
+    <None Include="icons\vs2012\Class-Private_493.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="icons\vs2012\classvs11.bmp" />
+    <None Include="icons\vs2012\Class-Protected_492.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="icons\vs2012\interfacevs11.bmp" />
+    <None Include="icons\vs2012\Class-Sealed_490.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="icons\vs2012\method_privatevs11.bmp" />
+    <None Include="icons\vs2012\Constant-Private_519.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="icons\vs2012\method_protectedvs11.bmp" />
+    <None Include="icons\vs2012\Constant-Sealed_496.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="icons\vs2012\method_publicvs11.bmp" />
+    <None Include="icons\vs2012\Delegate-Private_580.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="icons\vs2012\namespacevs11.bmp" />
+    <None Include="icons\vs2012\Delegate-Protected_573.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Delegate-Sealed_551.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Enum-Private_586.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Enum-Protected_585.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Enum-Sealed_583.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Event-Private_598.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Event-Protected_597.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Event-Sealed_595.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Field-Private_545.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Field-Protected_544.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Field-Sealed_542.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Interface-Private_616.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Interface-Protected_615.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Interface-Sealed_613.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Library_6213.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Method-Private_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Method-Protected_639.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Method-Sealed_637.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Namespace_654.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Operater-Protected_498.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Operator-Friend_662.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Operator-Private_499.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Operator-Sealed_661.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\PropertyIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Property-Private_505.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Structure-Private_512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Structure-Protected_511.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Structure-Sealed_509.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\ClassIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Constant_495.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Constant-Protected_508.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Delegate_540.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Enum_582.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Event_594.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\FieldIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Interface_612.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Method_636.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Operator_660.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Operator-Protected_498.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Structure_507.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\Class_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\ClassPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\ClassProtected_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\ClassSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\Constant_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\ConstantPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\ConstantProtected_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\ConstantSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\Delegate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\DelegatePrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\DelegateProtected_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\DelegateSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\Enumerator_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\EnumPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\EnumProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\EnumSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\Event_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\EventPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\EventProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\EventSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\Field_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\FieldPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\FieldProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\FieldSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\Interface_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\InterfacePrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\InterfaceProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\InterfaceSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\Library_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\Method_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\MethodPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\MethodProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\MethodSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\Namespace_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\Operator_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\OperatorPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\OperatorProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\OperatorSealed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\Property_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\PropertyPrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\Structure_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\StructurePrivate_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\StructureProtect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2017\StructureSealed_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

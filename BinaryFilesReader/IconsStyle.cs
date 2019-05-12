@@ -7,9 +7,9 @@ namespace BinaryFilesReader
 	public static class IconsStyle
 	{
 		/// <summary>
-		/// Gets the image list of Visual Studio 2010 style.
+		/// Gets the image list of Visual Studio 2017 style.
 		/// </summary>
-		public static ImageList Icons2010 { get; }
+		public static ImageList Icons2017 { get; }
 
 		/// <summary>
 		/// Gets the image list of Visual Studio 2012 style.
@@ -18,23 +18,33 @@ namespace BinaryFilesReader
 
 		static IconsStyle()
 		{
-			Icons2010 = new ImageList();
-			Icons2010.Images.Add(Properties.Resources.class_sealedvs10);
-			Icons2010.Images.Add(Properties.Resources.classvs10);
-			Icons2010.Images.Add(Properties.Resources.interfacevs10);
-			Icons2010.Images.Add(Properties.Resources.method_privatevs10);
-			Icons2010.Images.Add(Properties.Resources.method_protectedvs10);
-			Icons2010.Images.Add(Properties.Resources.method_publicvs10);
-			Icons2010.Images.Add(Properties.Resources.namespacevs10);
+			Icons2017 = new ImageList();
+			Icons2017.Images.Add(Properties.Resources.Library_16x);
+			Icons2017.Images.Add(Properties.Resources.Class_16x);
+			Icons2017.Images.Add(Properties.Resources.ClassPrivate_16x);
+			Icons2017.Images.Add(Properties.Resources.ClassProtected_16x);
+			Icons2017.Images.Add(Properties.Resources.ClassSealed_16x);
+			Icons2017.Images.Add(Properties.Resources.Interface_16x);
+			Icons2017.Images.Add(Properties.Resources.InterfacePrivate_16x);
+			Icons2017.Images.Add(Properties.Resources.InterfaceProtect_16x);
+			Icons2017.Images.Add(Properties.Resources.Namespace_16x);
+			Icons2017.Images.Add(Properties.Resources.Method_16x);
+			Icons2017.Images.Add(Properties.Resources.MethodPrivate_16x);
+			Icons2017.Images.Add(Properties.Resources.MethodProtect_16x);
 
 			Icons2012 = new ImageList();
-			Icons2012.Images.Add(Properties.Resources.class_sealedvs11);
-			Icons2012.Images.Add(Properties.Resources.classvs11);
-			Icons2012.Images.Add(Properties.Resources.interfacevs11);
-			Icons2012.Images.Add(Properties.Resources.method_privatevs11);
-			Icons2012.Images.Add(Properties.Resources.method_protectedvs11);
-			Icons2012.Images.Add(Properties.Resources.method_publicvs11);
-			Icons2012.Images.Add(Properties.Resources.namespacevs11);
+			Icons2012.Images.Add(Properties.Resources.Library_6213);
+			Icons2012.Images.Add(Properties.Resources.ClassIcon);
+			Icons2012.Images.Add(Properties.Resources.Class_Private_493);
+			Icons2012.Images.Add(Properties.Resources.Class_Protected_492);
+			Icons2012.Images.Add(Properties.Resources.Class_Sealed_490);
+			Icons2012.Images.Add(Properties.Resources.Interface_612);
+			Icons2012.Images.Add(Properties.Resources.Interface_Private_616);
+			Icons2012.Images.Add(Properties.Resources.Interface_Protected_615);
+			Icons2012.Images.Add(Properties.Resources.Namespace_654);
+			Icons2012.Images.Add(Properties.Resources.Method_636);
+			Icons2012.Images.Add(Properties.Resources.Method_Private_640);
+			Icons2012.Images.Add(Properties.Resources.Method_Protected_639);
 		}
 
 		/// <summary>
@@ -47,12 +57,26 @@ namespace BinaryFilesReader
 			if (type != null)
 			{
 				if (type.IsClass)
-					return type.IsSealed ? 0 : 1;
-				if (type.IsInterface)
+				{
+					if (type.IsSealed)
+						return 4;
+					if (type.IsPublic)
+						return 1;
+					if (type.IsNestedFamily)
+						return 3;
 					return 2;
+				}
+				if (type.IsInterface)
+				{
+					if (type.IsPublic)
+						return 5;
+					if (type.IsNestedFamily)
+						return 7;
+					return 6;
+				}
 			}
 			else
-				return 6;
+				return 8;
 
 			throw new NotSupportedException(Properties.Resources.ObjectIconNotSupported);
 		}
@@ -64,10 +88,11 @@ namespace BinaryFilesReader
 		/// <returns>Index of the icon.</returns>
 		public static int GetMethodImageIndex(MethodInfo method)
 		{
+			if (method.IsPublic)
+				return 9;
 			if (method.IsPrivate)
-				return 3;
-
-			return method.IsPublic ? 5 : 4;
+				return 10;
+			return 11;
 		}
 	}
 }

@@ -17,8 +17,8 @@ namespace BinaryFilesReader
 		{
 			InitializeComponent();
 
-			treeView.ImageList = IconsStyle.Icons2010;
-			listView.SmallImageList = IconsStyle.Icons2010;
+			treeView.ImageList = IconsStyle.Icons2017;
+			listView.SmallImageList = IconsStyle.Icons2017;
 			listView.ListViewItemSorter = new ListViewItemComparer();
 		}
 
@@ -65,7 +65,7 @@ namespace BinaryFilesReader
 
 		private void CreateAssemblyTree(string path, DecompiledAssembly assembly)
 		{
-			var root = treeView.Nodes.Add(path, path.Substring(path.LastIndexOf('\\') + 1), 6, 6);
+			var root = treeView.Nodes.Add(path, path.Substring(path.LastIndexOf('\\') + 1), 0, 0);
 
 			foreach (var assemblyType in assembly.Types.Keys)
 			{
@@ -193,11 +193,11 @@ namespace BinaryFilesReader
 			invokeWindow.ShowDialog();
 		}
 
-		private void IconsTo2010StyleChanged(object sender, EventArgs e)
+		private void IconsTo2017StyleChanged(object sender, EventArgs e)
 		{
 			vS2010StyleToolStripMenuItem.Checked = true;
 			vS2012StyleToolStripMenuItem.Checked = false;
-			listView.SmallImageList = treeView.ImageList = IconsStyle.Icons2010;
+			listView.SmallImageList = treeView.ImageList = IconsStyle.Icons2017;
 		}
 
 		private void IconsTo2012StyleChanged(object sender, EventArgs e)

@@ -41,9 +41,9 @@
 			this.buttonCreate = new System.Windows.Forms.Button();
 			this.listView = new System.Windows.Forms.ListView();
 			this.column = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.detailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.menuStrip1.SuspendLayout();
 			this.contextMenuStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -91,8 +91,8 @@
 			// iconsSetToolStripMenuItem
 			// 
 			this.iconsSetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vS2010StyleToolStripMenuItem,
-            this.vS2012StyleToolStripMenuItem});
+            this.vS2012StyleToolStripMenuItem,
+            this.vS2010StyleToolStripMenuItem});
 			this.iconsSetToolStripMenuItem.Name = "iconsSetToolStripMenuItem";
 			this.iconsSetToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
 			this.iconsSetToolStripMenuItem.Text = "Icons set";
@@ -102,14 +102,14 @@
 			this.vS2010StyleToolStripMenuItem.Checked = true;
 			this.vS2010StyleToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.vS2010StyleToolStripMenuItem.Name = "vS2010StyleToolStripMenuItem";
-			this.vS2010StyleToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-			this.vS2010StyleToolStripMenuItem.Text = "VS2010 style";
-			this.vS2010StyleToolStripMenuItem.Click += new System.EventHandler(this.IconsTo2010StyleChanged);
+			this.vS2010StyleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.vS2010StyleToolStripMenuItem.Text = "VS2017 style";
+			this.vS2010StyleToolStripMenuItem.Click += new System.EventHandler(this.IconsTo2017StyleChanged);
 			// 
 			// vS2012StyleToolStripMenuItem
 			// 
 			this.vS2012StyleToolStripMenuItem.Name = "vS2012StyleToolStripMenuItem";
-			this.vS2012StyleToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+			this.vS2012StyleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.vS2012StyleToolStripMenuItem.Text = "VS2012 style";
 			this.vS2012StyleToolStripMenuItem.Click += new System.EventHandler(this.IconsTo2012StyleChanged);
 			// 
@@ -157,22 +157,6 @@
 			this.column.Text = "Nazwa metody";
 			this.column.Width = 150;
 			// 
-			// listToolStripMenuItem
-			// 
-			this.listToolStripMenuItem.Checked = true;
-			this.listToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.listToolStripMenuItem.Name = "listToolStripMenuItem";
-			this.listToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.listToolStripMenuItem.Text = "List";
-			this.listToolStripMenuItem.Click += new System.EventHandler(this.DisplayMethodList);
-			// 
-			// detailsToolStripMenuItem
-			// 
-			this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
-			this.detailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.detailsToolStripMenuItem.Text = "Details";
-			this.detailsToolStripMenuItem.Click += new System.EventHandler(this.DisplayDetailedMethodList);
-			// 
 			// contextMenuStrip
 			// 
 			this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -180,6 +164,22 @@
             this.detailsToolStripMenuItem});
 			this.contextMenuStrip.Name = "contextMenuStrip1";
 			this.contextMenuStrip.Size = new System.Drawing.Size(110, 48);
+			// 
+			// listToolStripMenuItem
+			// 
+			this.listToolStripMenuItem.Checked = true;
+			this.listToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.listToolStripMenuItem.Name = "listToolStripMenuItem";
+			this.listToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+			this.listToolStripMenuItem.Text = "List";
+			this.listToolStripMenuItem.Click += new System.EventHandler(this.DisplayMethodList);
+			// 
+			// detailsToolStripMenuItem
+			// 
+			this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
+			this.detailsToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+			this.detailsToolStripMenuItem.Text = "Details";
+			this.detailsToolStripMenuItem.Click += new System.EventHandler(this.DisplayDetailedMethodList);
 			// 
 			// Browser
 			// 

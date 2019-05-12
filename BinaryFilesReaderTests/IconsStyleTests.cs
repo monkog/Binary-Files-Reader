@@ -9,74 +9,108 @@ namespace BinaryFilesReaderTests
 	public class IconsStyleTests
 	{
 		[Test]
-		public void GetTypeImageIndex_SealedClass_0()
+		public void GetTypeImageIndex_PublicClass_1()
 		{
-			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(SealedClass));
-
-			Assert.AreEqual(0, iconIndex);
-		}
-
-		[Test]
-		public void GetTypeImageIndex_Class_1()
-		{
-			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(Class));
+			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(PublicClass));
 
 			Assert.AreEqual(1, iconIndex);
 		}
 
 		[Test]
-		public void GetTypeImageIndex_Interface_2()
+		public void GetTypeImageIndex_PrivateClass_2()
 		{
-			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(IInterface));
+			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(PrivateClass));
 
 			Assert.AreEqual(2, iconIndex);
 		}
 
 		[Test]
-		public void GetTypeImageIndex_Namespace_6()
+		public void GetTypeImageIndex_ProtectedClass_3()
 		{
-			var type = Assembly.GetExecutingAssembly().GetType(nameof(BinaryFilesReaderTests));
-
-			var iconIndex = IconsStyle.GetTypeImageIndex(type);
-
-			Assert.AreEqual(6, iconIndex);
-		}
-
-		[Test]
-		public void GetMethodImageIndex_PrivateMethod_3()
-		{
-			var method = GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Instance).Single(m => m.Name == nameof(PrivateMethod));
-
-			var iconIndex = IconsStyle.GetMethodImageIndex(method);
+			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(ProtectedClass));
 
 			Assert.AreEqual(3, iconIndex);
 		}
 
 		[Test]
-		public void GetMethodImageIndex_ProtectedMethod_4()
+		public void GetTypeImageIndex_SealedClass_4()
 		{
-			var method = GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Instance).Single(m => m.Name == nameof(ProtectedMethod));
-
-			var iconIndex = IconsStyle.GetMethodImageIndex(method);
+			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(SealedClass));
 
 			Assert.AreEqual(4, iconIndex);
 		}
 
 		[Test]
-		public void GetMethodImageIndex_PublicMethod_5()
+		public void GetTypeImageIndex_PublicInterface_5()
+		{
+			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(IPublicInterface));
+
+			Assert.AreEqual(5, iconIndex);
+		}
+
+		[Test]
+		public void GetTypeImageIndex_PrivateInterface_6()
+		{
+			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(IPrivateInterface));
+
+			Assert.AreEqual(6, iconIndex);
+		}
+
+		[Test]
+		public void GetTypeImageIndex_ProtectedInterface_6()
+		{
+			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(IProtectedInterface));
+
+			Assert.AreEqual(7, iconIndex);
+		}
+
+		[Test]
+		public void GetTypeImageIndex_Namespace_8()
+		{
+			var type = Assembly.GetExecutingAssembly().GetType(nameof(BinaryFilesReaderTests));
+
+			var iconIndex = IconsStyle.GetTypeImageIndex(type);
+
+			Assert.AreEqual(8, iconIndex);
+		}
+
+		[Test]
+		public void GetMethodImageIndex_PublicMethod_9()
 		{
 			var method = GetType().GetMethods().Single(m => m.Name == nameof(PublicMethod));
 
 			var iconIndex = IconsStyle.GetMethodImageIndex(method);
 
-			Assert.AreEqual(5, iconIndex);
+			Assert.AreEqual(9, iconIndex);
 		}
 
-		private sealed class SealedClass { }
+		[Test]
+		public void GetMethodImageIndex_PrivateMethod_10()
+		{
+			var method = GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Instance).Single(m => m.Name == nameof(PrivateMethod));
 
-		private class Class { }
+			var iconIndex = IconsStyle.GetMethodImageIndex(method);
 
-		private interface IInterface { }
+			Assert.AreEqual(10, iconIndex);
+		}
+
+		[Test]
+		public void GetMethodImageIndex_ProtectedMethod_11()
+		{
+			var method = GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Instance).Single(m => m.Name == nameof(ProtectedMethod));
+
+			var iconIndex = IconsStyle.GetMethodImageIndex(method);
+
+			Assert.AreEqual(11, iconIndex);
+		}
+
+		private class PrivateClass { }
+
+		protected class ProtectedClass { }
+
+		private interface IPrivateInterface { }
+
+		protected interface IProtectedInterface { }
 
 		public void PublicMethod() { }
 
@@ -84,4 +118,10 @@ namespace BinaryFilesReaderTests
 
 		private void PrivateMethod() { }
 	}
+
+	public sealed class SealedClass { }
+
+	public class PublicClass { }
+
+	public interface IPublicInterface { }
 }
