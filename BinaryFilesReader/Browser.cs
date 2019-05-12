@@ -19,7 +19,6 @@ namespace BinaryFilesReader
 
 			treeView.ImageList = IconsStyle.Icons2017;
 			listView.SmallImageList = IconsStyle.Icons2017;
-			listView.ListViewItemSorter = new ListViewItemComparer();
 		}
 
 		private void LoadFileClicked(object sender, EventArgs e)
@@ -135,9 +134,13 @@ namespace BinaryFilesReader
 			if (constructor != null && !type.IsAbstract)
 				buttonCreate.Enabled = true;
 
-			var items = InitializeMethodItems(assembly, type);
-			listView.Items.AddRange(items.ToArray());
-			listView.Sort();
+			var fields = InitializeFieldItems(assembly, type);
+			fields.Sort(new ListViewItemComparer().Compare);
+			listView.Items.AddRange(fields.ToArray());
+
+			var methods = InitializeMethodItems(assembly, type);
+			methods.Sort(new ListViewItemComparer().Compare);
+			listView.Items.AddRange(methods.ToArray());
 		}
 
 		private TreeNode FindRootForType(string[] pathParts)
@@ -165,8 +168,27 @@ namespace BinaryFilesReader
 			{
 				var iconIndex = IconsStyle.GetMethodImageIndex(method);
 				var methodItem = new ListViewItem(method.Name)
-					{ImageIndex = iconIndex, StateImageIndex = iconIndex, Tag = method};
+				{ ImageIndex = iconIndex, StateImageIndex = iconIndex, Tag = method };
 				items.Add(methodItem);
+			}
+
+			return items;
+		}
+
+		private static List<ListViewItem> InitializeFieldItems(DecompiledAssembly assembly, Type type)
+		{
+			if (!assembly.Fields.ContainsKey(type))
+				assembly.InitializeFieldsForType(type);
+
+			var fields = assembly.Fields[type];
+			var items = new List<ListViewItem>();
+
+			foreach (var field in fields)
+			{
+				var iconIndex = IconsStyle.GetFieldImageIndex(field);
+				var fieldItem = new ListViewItem(field.Name)
+				{ ImageIndex = iconIndex, StateImageIndex = iconIndex, Tag = field };
+				items.Add(fieldItem);
 			}
 
 			return items;
@@ -187,7 +209,7 @@ namespace BinaryFilesReader
 
 		private void OpenInvokeMethodWindow(object sender, EventArgs e)
 		{
-			if (listView.SelectedItems.Count == 0) return;
+			if (listView.SelectedItems.Count == 0 || listView.SelectedItems[0].Tag is FieldInfo) return;
 			var createdInstances = _assemblies.Values.SelectMany(a => a.Instances.Values);
 			var invokeWindow = new InvokeWindow(listView.SelectedItems[0].Tag as MethodBase, createdInstances) { Owner = this };
 			invokeWindow.ShowDialog();
