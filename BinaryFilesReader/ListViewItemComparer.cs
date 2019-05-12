@@ -12,7 +12,7 @@ namespace BinaryFilesReader
 			if (!(item1 is ListViewItem && item2 is ListViewItem))
 				throw new ArgumentException(Properties.Resources.ArgumentShouldBeOfTypeListViewItem);
 
-			return string.CompareOrdinal(((ListViewItem)item1).Text, ((ListViewItem)item2).Text);
+			return string.Compare(((ListViewItem)item1).Text, ((ListViewItem)item2).Text, StringComparison.InvariantCulture);
 		}
 	}
 }
