@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using System.Windows.Forms;
 using BinaryFilesReader;
 
@@ -46,6 +47,48 @@ namespace BinaryFilesReaderTests
 			var result = _unitUnderTest.Compare(item2, item1);
 
 			Assert.Greater(result, 0);
+		}
+
+		[Test]
+		public void Compare_ListViewItemToOtherObject_Exception()
+		{
+			var item1 = new ListViewItemComparerTests();
+			var item2 = new ListViewItem { Text = Bear };
+
+			void Compare()
+			{
+				var _ = _unitUnderTest.Compare(item1, item2);
+			}
+
+			Assert.Throws<ArgumentException>(Compare);
+		}
+
+		[Test]
+		public void Compare_OtherObjectToListViewItem_Exception()
+		{
+			var item1 = new ListViewItem { Text = Bear };
+			var item2 = new ListViewItemComparerTests();
+
+			void Compare()
+			{
+				var _ = _unitUnderTest.Compare(item1, item2);
+			}
+
+			Assert.Throws<ArgumentException>(Compare);
+		}
+
+		[Test]
+		public void Compare_OtherObjects_Exception()
+		{
+			var item1 = new ListViewItemComparerTests();
+			var item2 = new ListViewItemComparerTests();
+
+			void Compare()
+			{
+				var _ = _unitUnderTest.Compare(item1, item2);
+			}
+
+			Assert.Throws<ArgumentException>(Compare);
 		}
 	}
 }

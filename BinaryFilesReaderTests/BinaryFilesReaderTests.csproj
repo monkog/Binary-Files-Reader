@@ -50,6 +50,7 @@
     <Compile Include="DecompiledAssemblyTests.cs" />
     <Compile Include="Extensions\TypeExtensionsTests.cs" />
     <Compile Include="IconsStyleTests.cs" />
+    <Compile Include="InvokeWindowTests.cs" />
     <Compile Include="ListViewItemComparerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

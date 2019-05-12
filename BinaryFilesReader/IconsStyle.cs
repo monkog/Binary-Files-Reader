@@ -50,12 +50,6 @@ namespace BinaryFilesReader
 					return type.IsSealed ? 0 : 1;
 				if (type.IsInterface)
 					return 2;
-				if (type.IsNotPublic)
-					return 3;
-				if (type.IsPublic)
-					return 5;
-				if (type.IsNestedPrivate)
-					return 4;
 			}
 			else
 				return 6;

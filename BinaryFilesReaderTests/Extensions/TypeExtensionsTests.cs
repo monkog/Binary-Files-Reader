@@ -57,6 +57,15 @@ namespace BinaryFilesReaderTests.Extensions
 		}
 
 		[Test]
+		public void ConvertObject_CannotConvert_ErrorSet()
+		{
+			typeof(TypeExtensions).ConvertObject(this, out var error);
+
+			Assert.IsNotNull(error);
+			Assert.IsFalse(string.IsNullOrEmpty(error) || string.IsNullOrWhiteSpace(error));
+		}
+
+		[Test]
 		public void ConvertObject_CannotConvert_NoErrorMessage()
 		{
 			typeof(TypeExtensions).ConvertObject(this, out var error);

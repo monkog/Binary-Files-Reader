@@ -10,8 +10,8 @@ namespace BinaryFilesReader
 {
 	public partial class Browser : Form
 	{
-		public Dictionary<string, DecompiledAssembly> Assemblies = new Dictionary<string, DecompiledAssembly>();
-		private Assembly _assembly;
+		private readonly Dictionary<string, DecompiledAssembly> _assemblies = new Dictionary<string, DecompiledAssembly>();
+		private Assembly _selectedAssembly;
 
 		public Browser()
 		{
@@ -25,10 +25,10 @@ namespace BinaryFilesReader
 		private void LoadFileClicked(object sender, EventArgs e)
 		{
 			var path = SelectAssemblyPath();
-			if (string.IsNullOrEmpty(path) || Assemblies.ContainsKey(path)) return;
+			if (string.IsNullOrEmpty(path) || _assemblies.ContainsKey(path)) return;
 
 			if (!TryOpenAssembly(path, out var assembly)) return;
-			Assemblies[path] = assembly;
+			_assemblies[path] = assembly;
 			CreateAssemblyTree(path, assembly);
 			buttonCreate.Enabled = false;
 		}
@@ -122,8 +122,8 @@ namespace BinaryFilesReader
 			buttonCreate.Enabled = false;
 			listView.Items.Clear();
 
-			var assembly = Assemblies[root.Name];
-			_assembly = assembly.Assembly;
+			var assembly = _assemblies[root.Name];
+			_selectedAssembly = assembly.Assembly;
 
 			var fullTypeName = GetFullTypeName(e.Node.FullPath);
 			if (!assembly.Types.ContainsKey(fullTypeName)) return;
@@ -175,7 +175,7 @@ namespace BinaryFilesReader
 		private void CreateClicked(object sender, EventArgs e)
 		{
 			var fullTypeName = GetFullTypeName(treeView.SelectedNode.FullPath);
-			Assemblies[_assembly.Location].Instantiate(fullTypeName);
+			_assemblies[_selectedAssembly.Location].Instantiate(fullTypeName);
 		}
 
 		private static string GetFullTypeName(string nodePath)
@@ -188,7 +188,7 @@ namespace BinaryFilesReader
 		private void OpenInvokeMethodWindow(object sender, EventArgs e)
 		{
 			if (listView.SelectedItems.Count == 0) return;
-			var createdInstances = Assemblies.Values.SelectMany(a => a.Instances.Values);
+			var createdInstances = _assemblies.Values.SelectMany(a => a.Instances.Values);
 			var invokeWindow = new InvokeWindow(listView.SelectedItems[0].Tag as MethodBase, createdInstances) { Owner = this };
 			invokeWindow.ShowDialog();
 		}
