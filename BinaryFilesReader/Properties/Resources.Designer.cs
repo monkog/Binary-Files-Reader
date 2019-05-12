@@ -511,16 +511,6 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Field_Sealed_542 {
-            get {
-                object obj = ResourceManager.GetObject("Field_Sealed_542", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap FieldIcon {
             get {
                 object obj = ResourceManager.GetObject("FieldIcon", resourceCulture);
@@ -544,16 +534,6 @@ namespace BinaryFilesReader.Properties {
         internal static System.Drawing.Bitmap FieldProtect_16x {
             get {
                 object obj = ResourceManager.GetObject("FieldProtect_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FieldSealed_16x {
-            get {
-                object obj = ResourceManager.GetObject("FieldSealed_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

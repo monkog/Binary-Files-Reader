@@ -104,6 +104,36 @@ namespace BinaryFilesReaderTests
 			Assert.AreEqual(11, iconIndex);
 		}
 
+		[Test]
+		public void GetFieldImageIndex_PublicField_12()
+		{
+			var field = GetType().GetField(nameof(PublicField), BindingFlags.Public | BindingFlags.Instance);
+
+			var iconIndex = IconsStyle.GetFieldImageIndex(field);
+
+			Assert.AreEqual(12, iconIndex);
+		}
+
+		[Test]
+		public void GetFieldImageIndex_PrivateField_13()
+		{
+			var field = GetType().GetField(nameof(_privateField), BindingFlags.NonPublic | BindingFlags.Instance);
+
+			var iconIndex = IconsStyle.GetFieldImageIndex(field);
+
+			Assert.AreEqual(13, iconIndex);
+		}
+
+		[Test]
+		public void GetFieldImageIndex_ProtectedField_14()
+		{
+			var field = GetType().GetField(nameof(ProtectedField), BindingFlags.NonPublic | BindingFlags.Instance);
+
+			var iconIndex = IconsStyle.GetFieldImageIndex(field);
+
+			Assert.AreEqual(14, iconIndex);
+		}
+
 		private class PrivateClass { }
 
 		protected class ProtectedClass { }
@@ -117,6 +147,12 @@ namespace BinaryFilesReaderTests
 		protected void ProtectedMethod() { }
 
 		private void PrivateMethod() { }
+
+		private int _privateField;
+
+		protected int ProtectedField;
+
+		public int PublicField;
 	}
 
 	public sealed class SealedClass { }
