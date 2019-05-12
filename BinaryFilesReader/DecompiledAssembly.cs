@@ -22,6 +22,11 @@ namespace BinaryFilesReader
 		public Dictionary<Type, MethodInfo[]> Methods { get; }
 
 		/// <summary>
+		/// Gets the collection of available fields for the type.
+		/// </summary>
+		public Dictionary<Type, FieldInfo[]> Fields { get; }
+
+		/// <summary>
 		/// Gets the collection of created instances of this assembly types.
 		/// </summary>
 		public Dictionary<string, object> Instances { get; }
@@ -31,6 +36,7 @@ namespace BinaryFilesReader
 			Assembly = Assembly.LoadFile(path);
 			Types =new Dictionary<string, Type>();
 			Instances = new Dictionary<string, object>();
+			Fields = new Dictionary<Type, FieldInfo[]>();
 			Methods = new Dictionary<Type, MethodInfo[]>();
 
 			foreach (var type in Assembly.GetTypes())
@@ -61,6 +67,18 @@ namespace BinaryFilesReader
 				throw new ArgumentException(Properties.Resources.TypeNotDefinedInAssembly);
 
 			Methods[type] = type.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+		}
+		
+		/// <summary>
+		/// Initializes the available field collection for the provided type.
+		/// </summary>
+		/// <param name="type">Type to initialize the field collection for.</param>
+		public void InitializeFieldsForType(Type type)
+		{
+			if(!Types.ContainsValue(type))
+				throw new ArgumentException(Properties.Resources.TypeNotDefinedInAssembly);
+
+			Fields[type] = type.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
 		}
 	}
 }
