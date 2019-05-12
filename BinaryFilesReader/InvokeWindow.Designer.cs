@@ -88,7 +88,10 @@
 			this.ClientSize = new System.Drawing.Size(637, 290);
 			this.Controls.Add(this.buttonInvoke);
 			this.Controls.Add(this.dataGridView);
+			this.MaximumSize = new System.Drawing.Size(653, 329);
+			this.MinimumSize = new System.Drawing.Size(653, 329);
 			this.Name = "InvokeWindow";
+			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.Text = "InvokeWindow";
 			this.Load += new System.EventHandler(this.Initialized);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
