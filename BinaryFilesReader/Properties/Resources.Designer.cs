@@ -951,5 +951,14 @@ namespace BinaryFilesReader.Properties {
                 return ResourceManager.GetString("TypesCouldNotBeLoaded", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value of {0} field for {1} instance..
+        /// </summary>
+        internal static string ValueOfField {
+            get {
+                return ResourceManager.GetString("ValueOfField", resourceCulture);
+            }
+        }
     }
 }

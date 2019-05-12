@@ -12,6 +12,7 @@ namespace BinaryFilesReader
 	{
 		private readonly Dictionary<string, DecompiledAssembly> _assemblies = new Dictionary<string, DecompiledAssembly>();
 		private Assembly _selectedAssembly;
+		private string _selectedFullTypeName;
 
 		public Browser()
 		{
@@ -130,6 +131,7 @@ namespace BinaryFilesReader
 			var type = assembly.Types[fullTypeName];
 			if (!type.IsClass && !type.IsInterface) return;
 
+			_selectedFullTypeName = fullTypeName;
 			var constructor = type.GetConstructor(Type.EmptyTypes);
 			if (constructor != null && !type.IsAbstract)
 				buttonCreate.Enabled = true;
@@ -209,10 +211,50 @@ namespace BinaryFilesReader
 
 		private void OpenInvokeMethodWindow(object sender, EventArgs e)
 		{
-			if (listView.SelectedItems.Count == 0 || listView.SelectedItems[0].Tag is FieldInfo) return;
+			if (listView.SelectedItems.Count == 0) return;
+			var selectedItem = listView.SelectedItems[0];
+			var isMethod = selectedItem.Tag is MethodInfo;
+
+			if (isMethod)
+			{
+				ShowMethodInvocationWindow();
+				return;
+			}
+
+			ShowFieldValueDisplayWindow(selectedItem);
+		}
+
+		private void ShowFieldValueDisplayWindow(ListViewItem selectedItem)
+		{
+			var assembly = _assemblies[_selectedAssembly.Location];
+			if (!assembly.Instances.ContainsKey(_selectedFullTypeName)) return;
+
+			var instance = assembly.Instances[_selectedFullTypeName];
+
+			var fieldInfo = selectedItem.Tag as FieldInfo;
+			var windowTitle = string.Format(Resources.ValueOfField, fieldInfo.Name, _selectedFullTypeName);
+
+			try
+			{
+				var fieldValue = fieldInfo.GetValue(instance);
+				MessageBox.Show(fieldValue?.ToString(), windowTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			catch (NotSupportedException e)
+			{
+				MessageBox.Show(e.Message + e.InnerException?.Message, windowTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			catch (FieldAccessException e)
+			{
+				MessageBox.Show(e.Message + e.InnerException?.Message, windowTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void ShowMethodInvocationWindow()
+		{
 			var createdInstances = _assemblies.Values.SelectMany(a => a.Instances.Values);
 			var invokeWindow = new InvokeWindow(listView.SelectedItems[0].Tag as MethodBase, createdInstances) { Owner = this };
 			invokeWindow.ShowDialog();
+			return;
 		}
 
 		private void IconsTo2017StyleChanged(object sender, EventArgs e)
