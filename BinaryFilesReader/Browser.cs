@@ -143,6 +143,10 @@ namespace BinaryFilesReader
 			var methods = InitializeMethodItems(assembly, type);
 			methods.Sort(new ListViewItemComparer().Compare);
 			listView.Items.AddRange(methods.ToArray());
+
+			var events = InitializeEventItems(assembly, type);
+			events.Sort(new ListViewItemComparer().Compare);
+			listView.Items.AddRange(events.ToArray());
 		}
 
 		private TreeNode FindRootForType(string[] pathParts)
@@ -169,8 +173,7 @@ namespace BinaryFilesReader
 			foreach (var method in methods)
 			{
 				var iconIndex = IconsStyle.GetMethodImageIndex(method);
-				var methodItem = new ListViewItem(method.Name)
-				{ ImageIndex = iconIndex, StateImageIndex = iconIndex, Tag = method };
+				var methodItem = new ListViewItem(method.Name) { ImageIndex = iconIndex, Tag = method };
 				items.Add(methodItem);
 			}
 
@@ -188,9 +191,26 @@ namespace BinaryFilesReader
 			foreach (var field in fields)
 			{
 				var iconIndex = IconsStyle.GetFieldImageIndex(field);
-				var fieldItem = new ListViewItem(field.Name)
-				{ ImageIndex = iconIndex, StateImageIndex = iconIndex, Tag = field };
+				var fieldItem = new ListViewItem(field.Name) { ImageIndex = iconIndex, Tag = field };
 				items.Add(fieldItem);
+			}
+
+			return items;
+		}
+
+		private static List<ListViewItem> InitializeEventItems(DecompiledAssembly assembly, Type type)
+		{
+			if (!assembly.Events.ContainsKey(type))
+				assembly.InitializeEventsForType(type);
+
+			var events = assembly.Events[type];
+			var items = new List<ListViewItem>();
+
+			foreach (var eventInfo in events)
+			{
+				var iconIndex = IconsStyle.GetEventImageIndex(eventInfo);
+				var eventItem = new ListViewItem(eventInfo.Name) { ImageIndex = iconIndex, Tag = eventInfo };
+				items.Add(eventItem);
 			}
 
 			return items;
@@ -214,14 +234,10 @@ namespace BinaryFilesReader
 			if (listView.SelectedItems.Count == 0) return;
 			var selectedItem = listView.SelectedItems[0];
 			var isMethod = selectedItem.Tag is MethodInfo;
+			var isField = selectedItem.Tag is FieldInfo;
 
-			if (isMethod)
-			{
-				ShowMethodInvocationWindow();
-				return;
-			}
-
-			ShowFieldValueDisplayWindow(selectedItem);
+			if (isMethod) ShowMethodInvocationWindow();
+			else if (isField) ShowFieldValueDisplayWindow(selectedItem);
 		}
 
 		private void ShowFieldValueDisplayWindow(ListViewItem selectedItem)

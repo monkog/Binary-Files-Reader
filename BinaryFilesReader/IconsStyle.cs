@@ -34,6 +34,7 @@ namespace BinaryFilesReader
 			Icons2017.Images.Add(Properties.Resources.Field_16x);
 			Icons2017.Images.Add(Properties.Resources.FieldPrivate_16x);
 			Icons2017.Images.Add(Properties.Resources.FieldProtect_16x);
+			Icons2017.Images.Add(Properties.Resources.Event_16x);
 
 			Icons2012 = new ImageList();
 			Icons2012.Images.Add(Properties.Resources.Library_6213);
@@ -51,6 +52,7 @@ namespace BinaryFilesReader
 			Icons2012.Images.Add(Properties.Resources.FieldIcon);
 			Icons2012.Images.Add(Properties.Resources.Field_Private_545);
 			Icons2012.Images.Add(Properties.Resources.Field_Protected_544);
+			Icons2012.Images.Add(Properties.Resources.Event_594);
 		}
 
 		/// <summary>
@@ -113,6 +115,16 @@ namespace BinaryFilesReader
 			if (field.IsPrivate)
 				return 13;
 			return 14;
+		}
+
+		/// <summary>
+		/// Gets the image index corresponding to the provided event info.
+		/// </summary>
+		/// <param name="eventInfo">Event info.</param>
+		/// <returns>Index of the icon.</returns>
+		public static int GetEventImageIndex(EventInfo eventInfo)
+		{
+			return 15;
 		}
 	}
 }

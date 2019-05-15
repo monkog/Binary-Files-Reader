@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Reflection;
 using BinaryFilesReader;
 using NUnit.Framework;
@@ -134,6 +135,16 @@ namespace BinaryFilesReaderTests
 			Assert.AreEqual(14, iconIndex);
 		}
 
+		[Test]
+		public void GetEventImageIndex_PublicEvent_15()
+		{
+			var eventInfo = GetType().GetEvent(nameof(PublicEvent), BindingFlags.Public | BindingFlags.Instance);
+
+			var iconIndex = IconsStyle.GetEventImageIndex(eventInfo);
+
+			Assert.AreEqual(15, iconIndex);
+		}
+
 		private class PrivateClass { }
 
 		protected class ProtectedClass { }
@@ -153,6 +164,8 @@ namespace BinaryFilesReaderTests
 		protected int ProtectedField;
 
 		public int PublicField;
+
+		public event EventHandler PublicEvent;
 	}
 
 	public sealed class SealedClass { }
