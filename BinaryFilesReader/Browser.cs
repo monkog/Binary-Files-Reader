@@ -248,11 +248,11 @@ namespace BinaryFilesReader
 			var instance = assembly.Instances[_selectedFullTypeName];
 
 			var fieldInfo = selectedItem.Tag as FieldInfo;
-			var windowTitle = string.Format(Resources.ValueOfField, fieldInfo.Name, _selectedFullTypeName);
+			var windowTitle = string.Format(Resources.ValueOfField, fieldInfo?.Name, _selectedFullTypeName);
 
 			try
 			{
-				var fieldValue = fieldInfo.GetValue(instance);
+				var fieldValue = fieldInfo?.GetValue(instance);
 				MessageBox.Show(fieldValue?.ToString(), windowTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 			catch (NotSupportedException e)
@@ -270,7 +270,6 @@ namespace BinaryFilesReader
 			var createdInstances = _assemblies.Values.SelectMany(a => a.Instances.Values);
 			var invokeWindow = new InvokeWindow(listView.SelectedItems[0].Tag as MethodBase, createdInstances) { Owner = this };
 			invokeWindow.ShowDialog();
-			return;
 		}
 
 		private void IconsTo2017StyleChanged(object sender, EventArgs e)
