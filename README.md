@@ -13,6 +13,7 @@ The list on the right appears after choosing a certain class or interface. It li
 * methods
 * events
 
+### Creating and manipulating an instance of an object
 If the type provides a public parameterless constructor, the application gives you a possibility to create an instance of this type.  
 
 ![Field value window screenshot](./.Docs/FieldValue.JPG)
