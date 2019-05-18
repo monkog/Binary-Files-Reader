@@ -3,12 +3,16 @@ This program allows you to read an **.exe* or **.dll* file and list objects that
 
 ![Application screenshot](./.Docs/Application.JPG)
 
-The list on the left contains a tree structure of files that were opened. It lists
+The list on the left contains a tree structure of files that were opened. It lists:
 * namespaces
 * classes
 * interfaces
 
-The list on the right appears after choosing a certain class or interface. It lists all fields, methods and events that are defined in the chosen type.  
+The list on the right appears after choosing a certain class or interface. It lists objects that are defined in the chosen type such as:
+* fields
+* methods
+* events
+
 If the type provides a public parameterless constructor, the application gives you a possibility to create an instance of this type.  
 
 ![Field value window screenshot](./.Docs/FieldValue.JPG)
