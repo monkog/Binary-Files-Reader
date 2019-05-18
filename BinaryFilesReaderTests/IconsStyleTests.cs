@@ -145,6 +145,36 @@ namespace BinaryFilesReaderTests
 			Assert.AreEqual(15, iconIndex);
 		}
 
+		[Test]
+		public void GetTypeImageIndex_PublicEnum_16()
+		{
+			var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(t => t.Name == nameof(PublicEnum));
+
+			var iconIndex = IconsStyle.GetTypeImageIndex(type);
+
+			Assert.AreEqual(16, iconIndex);
+		}
+
+		[Test]
+		public void GetTypeImageIndex_PrivateEnum_17()
+		{
+			var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(t => t.Name == nameof(PrivateEnum));
+
+			var iconIndex = IconsStyle.GetTypeImageIndex(type);
+
+			Assert.AreEqual(17, iconIndex);
+		}
+
+		[Test]
+		public void GetTypeImageIndex_ProtectedEnum_18()
+		{
+			var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(t => t.Name == nameof(ProtectedEnum));
+
+			var iconIndex = IconsStyle.GetTypeImageIndex(type);
+
+			Assert.AreEqual(18, iconIndex);
+		}
+
 		private class PrivateClass { }
 
 		protected class ProtectedClass { }
@@ -166,6 +196,10 @@ namespace BinaryFilesReaderTests
 		public int PublicField;
 
 		public event EventHandler PublicEvent;
+
+		private enum PrivateEnum { }
+
+		protected enum ProtectedEnum { }
 	}
 
 	public sealed class SealedClass { }
@@ -173,4 +207,6 @@ namespace BinaryFilesReaderTests
 	public class PublicClass { }
 
 	public interface IPublicInterface { }
+
+	public enum PublicEnum { }
 }

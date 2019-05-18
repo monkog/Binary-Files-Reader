@@ -351,16 +351,6 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Enum_Sealed_583 {
-            get {
-                object obj = ResourceManager.GetObject("Enum_Sealed_583", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Enumerator_16x {
             get {
                 object obj = ResourceManager.GetObject("Enumerator_16x", resourceCulture);
@@ -384,16 +374,6 @@ namespace BinaryFilesReader.Properties {
         internal static System.Drawing.Bitmap EnumProtect_16x {
             get {
                 object obj = ResourceManager.GetObject("EnumProtect_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap EnumSealed_16x {
-            get {
-                object obj = ResourceManager.GetObject("EnumSealed_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
