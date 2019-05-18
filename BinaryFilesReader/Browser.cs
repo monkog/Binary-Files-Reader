@@ -129,7 +129,7 @@ namespace BinaryFilesReader
 			if (!assembly.Types.ContainsKey(fullTypeName)) return;
 
 			var type = assembly.Types[fullTypeName];
-			if (!type.IsClass && !type.IsInterface) return;
+			if (!type.IsClass && !type.IsInterface && !type.IsEnum) return;
 
 			_selectedFullTypeName = fullTypeName;
 			var constructor = type.GetConstructor(Type.EmptyTypes);
