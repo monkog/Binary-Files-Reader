@@ -44,6 +44,9 @@ namespace BinaryFilesReader
 			Icons2017.Images.Add(Properties.Resources.ConstantProtected_16x);
 			Icons2017.Images.Add(Properties.Resources.Property_16x);
 			Icons2017.Images.Add(Properties.Resources.PropertyPrivate_16x);
+			Icons2017.Images.Add(Properties.Resources.Structure_16x);
+			Icons2017.Images.Add(Properties.Resources.StructurePrivate_16x);
+			Icons2017.Images.Add(Properties.Resources.StructureProtect_16x);
 
 			Icons2012 = new ImageList();
 			Icons2012.Images.Add(Properties.Resources.Library_6213);
@@ -70,6 +73,9 @@ namespace BinaryFilesReader
 			Icons2012.Images.Add(Properties.Resources.Constant_Protected_508);
 			Icons2012.Images.Add(Properties.Resources.PropertyIcon);
 			Icons2012.Images.Add(Properties.Resources.Property_Private_505);
+			Icons2012.Images.Add(Properties.Resources.Structure_507);
+			Icons2012.Images.Add(Properties.Resources.Structure_Private_512);
+			Icons2012.Images.Add(Properties.Resources.Structure_Protected_511);
 		}
 
 		/// <summary>
@@ -106,6 +112,14 @@ namespace BinaryFilesReader
 					if (type.IsNestedFamily)
 						return 18;
 					return 17;
+				}
+				if (type.IsValueType)
+				{
+					if (type.IsPublic)
+						return 24;
+					if (type.IsNestedFamily)
+						return 26;
+					return 25;
 				}
 			}
 			else

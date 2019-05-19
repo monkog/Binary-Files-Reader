@@ -340,9 +340,6 @@
   <data name="StructureProtect_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\vs2017\StructureProtect_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StructureSealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2017\StructureSealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Structure_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\vs2017\Structure_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -354,9 +351,6 @@
   </data>
   <data name="Structure_Protected_511" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\vs2012\Structure-Protected_511.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Structure_Sealed_509" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2012\Structure-Sealed_509.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ValueOfField" xml:space="preserve">
     <value>The value of {0} field for {1} instance.</value>

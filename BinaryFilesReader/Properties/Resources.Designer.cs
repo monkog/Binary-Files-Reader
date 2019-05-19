@@ -788,16 +788,6 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Structure_Sealed_509 {
-            get {
-                object obj = ResourceManager.GetObject("Structure_Sealed_509", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap StructurePrivate_16x {
             get {
                 object obj = ResourceManager.GetObject("StructurePrivate_16x", resourceCulture);
@@ -811,16 +801,6 @@ namespace BinaryFilesReader.Properties {
         internal static System.Drawing.Bitmap StructureProtect_16x {
             get {
                 object obj = ResourceManager.GetObject("StructureProtect_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StructureSealed_16x {
-            get {
-                object obj = ResourceManager.GetObject("StructureSealed_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

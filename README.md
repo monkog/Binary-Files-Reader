@@ -9,6 +9,7 @@ The list on the left contains a tree structure of files that were opened. It lis
 * namespaces
 * classes
 * interfaces
+* structures
 * enums
 
 The list on the right appears after choosing a certain class or interface. It lists objects that are defined in the chosen type such as:
@@ -28,3 +29,9 @@ If an instance of a type is available, it's possible to see values that are assi
 ![Invoke method window screenshot](./.Docs/MethodInvoke.JPG)
 
 It's also possible to invoke methods that require no or just simple type parameters.
+
+
+## :link: Resources
+All external resources used in the project are listed below:
+
+:art: https://www.microsoft.com/en-us/download/details.aspx?id=35825
