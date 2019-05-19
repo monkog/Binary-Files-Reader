@@ -175,6 +175,36 @@ namespace BinaryFilesReaderTests
 			Assert.AreEqual(18, iconIndex);
 		}
 
+		[Test]
+		public void GetFieldImageIndex_PublicConst_19()
+		{
+			var field = GetType().GetField(nameof(PublicConst), BindingFlags.Public | BindingFlags.Static);
+
+			var iconIndex = IconsStyle.GetFieldImageIndex(field);
+
+			Assert.AreEqual(19, iconIndex);
+		}
+
+		[Test]
+		public void GetFieldImageIndex_PrivateConst_20()
+		{
+			var field = GetType().GetField(nameof(PrivateConst), BindingFlags.NonPublic | BindingFlags.Static);
+
+			var iconIndex = IconsStyle.GetFieldImageIndex(field);
+
+			Assert.AreEqual(20, iconIndex);
+		}
+
+		[Test]
+		public void GetFieldImageIndex_ProtectedConst_21()
+		{
+			var field = GetType().GetField(nameof(ProtectedConst), BindingFlags.NonPublic | BindingFlags.Static);
+
+			var iconIndex = IconsStyle.GetFieldImageIndex(field);
+
+			Assert.AreEqual(21, iconIndex);
+		}
+
 		private class PrivateClass { }
 
 		protected class ProtectedClass { }
@@ -194,6 +224,12 @@ namespace BinaryFilesReaderTests
 		protected int ProtectedField;
 
 		public int PublicField;
+
+		private const string PrivateConst = "ʕ• ᴥ •ʔ";
+
+		protected const string ProtectedConst = "ʕ• ᴥ •ʔ";
+
+		public const string PublicConst = "ʕ• ᴥ •ʔ";
 
 		public event EventHandler PublicEvent;
 

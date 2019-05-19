@@ -47,7 +47,7 @@ namespace BinaryFilesReader
 
 			foreach (var type in Assembly.GetTypes())
 			{
-				Types.Add(type.FullName, type);
+				Types.Add(type.FullName ?? throw new InvalidOperationException(), type);
 			}
 		}
 
@@ -72,7 +72,7 @@ namespace BinaryFilesReader
 			if (!Types.ContainsValue(type))
 				throw new ArgumentException(Properties.Resources.TypeNotDefinedInAssembly);
 
-			Methods[type] = type.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+			Methods[type] = type.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public | BindingFlags.Static);
 		}
 
 		/// <summary>
@@ -84,7 +84,7 @@ namespace BinaryFilesReader
 			if (!Types.ContainsValue(type))
 				throw new ArgumentException(Properties.Resources.TypeNotDefinedInAssembly);
 
-			Fields[type] = type.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+			Fields[type] = type.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public | BindingFlags.Static);
 		}
 
 		/// <summary>

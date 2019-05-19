@@ -201,16 +201,6 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Constant_Sealed_496 {
-            get {
-                object obj = ResourceManager.GetObject("Constant_Sealed_496", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ConstantPrivate_16x {
             get {
                 object obj = ResourceManager.GetObject("ConstantPrivate_16x", resourceCulture);
@@ -224,16 +214,6 @@ namespace BinaryFilesReader.Properties {
         internal static System.Drawing.Bitmap ConstantProtected_16x {
             get {
                 object obj = ResourceManager.GetObject("ConstantProtected_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ConstantSealed_16x {
-            get {
-                object obj = ResourceManager.GetObject("ConstantSealed_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

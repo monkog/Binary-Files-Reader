@@ -172,9 +172,6 @@
   <data name="ConstantProtected_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\vs2017\ConstantProtected_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ConstantSealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2017\ConstantSealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Constant_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\vs2017\Constant_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -186,9 +183,6 @@
   </data>
   <data name="Constant_Protected_508" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\vs2012\Constant-Protected_508.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Constant_Sealed_496" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2012\Constant-Sealed_496.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DelegatePrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\vs2017\DelegatePrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

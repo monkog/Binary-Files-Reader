@@ -38,6 +38,9 @@ namespace BinaryFilesReader
 			Icons2017.Images.Add(Properties.Resources.Enumerator_16x);
 			Icons2017.Images.Add(Properties.Resources.EnumPrivate_16x);
 			Icons2017.Images.Add(Properties.Resources.EnumProtect_16x);
+			Icons2017.Images.Add(Properties.Resources.Constant_16x);
+			Icons2017.Images.Add(Properties.Resources.ConstantPrivate_16x);
+			Icons2017.Images.Add(Properties.Resources.ConstantProtected_16x);
 
 			Icons2012 = new ImageList();
 			Icons2012.Images.Add(Properties.Resources.Library_6213);
@@ -59,6 +62,9 @@ namespace BinaryFilesReader
 			Icons2012.Images.Add(Properties.Resources.Enum_582);
 			Icons2012.Images.Add(Properties.Resources.Enum_Private_586);
 			Icons2012.Images.Add(Properties.Resources.Enum_Protected_585);
+			Icons2012.Images.Add(Properties.Resources.Constant_495);
+			Icons2012.Images.Add(Properties.Resources.Constant_Private_519);
+			Icons2012.Images.Add(Properties.Resources.Constant_Protected_508);
 		}
 
 		/// <summary>
@@ -124,6 +130,16 @@ namespace BinaryFilesReader
 		/// <returns>Index of the icon.</returns>
 		public static int GetFieldImageIndex(FieldInfo field)
 		{
+			// Constant fields
+			if (field.IsLiteral && !field.IsInitOnly)
+			{
+				if (field.IsPublic)
+					return 19;
+				if (field.IsPrivate)
+					return 20;
+				return 21;
+			}
+
 			if (field.IsPublic)
 				return 12;
 			if (field.IsPrivate)
