@@ -140,6 +140,10 @@ namespace BinaryFilesReader
 			fields.Sort(new ListViewItemComparer().Compare);
 			listView.Items.AddRange(fields.ToArray());
 
+			var properties = InitializePropertyItems(assembly, type);
+			properties.Sort(new ListViewItemComparer().Compare);
+			listView.Items.AddRange(properties.ToArray());
+
 			var methods = InitializeMethodItems(assembly, type);
 			methods.Sort(new ListViewItemComparer().Compare);
 			listView.Items.AddRange(methods.ToArray());
@@ -193,6 +197,24 @@ namespace BinaryFilesReader
 				var iconIndex = IconsStyle.GetFieldImageIndex(field);
 				var fieldItem = new ListViewItem(field.Name) { ImageIndex = iconIndex, Tag = field };
 				items.Add(fieldItem);
+			}
+
+			return items;
+		}
+
+		private static List<ListViewItem> InitializePropertyItems(DecompiledAssembly assembly, Type type)
+		{
+			if (!assembly.Properties.ContainsKey(type))
+				assembly.InitializePropertiesForType(type);
+
+			var properties = assembly.Properties[type];
+			var items = new List<ListViewItem>();
+
+			foreach (var property in properties)
+			{
+				var iconIndex = IconsStyle.GetPropertyImageIndex(property);
+				var propertyItem = new ListViewItem(property.Name) { ImageIndex = iconIndex, Tag = property };
+				items.Add(propertyItem);
 			}
 
 			return items;

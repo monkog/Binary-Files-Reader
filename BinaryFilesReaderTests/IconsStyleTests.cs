@@ -205,6 +205,26 @@ namespace BinaryFilesReaderTests
 			Assert.AreEqual(21, iconIndex);
 		}
 
+		[Test]
+		public void GetPropertyImageIndex_PublicProperty_22()
+		{
+			var property = GetType().GetProperty(nameof(PublicProperty), BindingFlags.Public | BindingFlags.Instance);
+
+			var iconIndex = IconsStyle.GetPropertyImageIndex(property);
+
+			Assert.AreEqual(22, iconIndex);
+		}
+
+		[Test]
+		public void GetPropertyImageIndex_PrivateProperty_23()
+		{
+			var property = GetType().GetProperty(nameof(PrivateProperty), BindingFlags.NonPublic | BindingFlags.Instance);
+
+			var iconIndex = IconsStyle.GetPropertyImageIndex(property);
+
+			Assert.AreEqual(23, iconIndex);
+		}
+
 		private class PrivateClass { }
 
 		protected class ProtectedClass { }
@@ -230,6 +250,10 @@ namespace BinaryFilesReaderTests
 		protected const string ProtectedConst = "ʕ• ᴥ •ʔ";
 
 		public const string PublicConst = "ʕ• ᴥ •ʔ";
+
+		private int PrivateProperty { get; }
+
+		public int PublicProperty { get; }
 
 		public event EventHandler PublicEvent;
 

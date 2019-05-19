@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -41,6 +42,8 @@ namespace BinaryFilesReader
 			Icons2017.Images.Add(Properties.Resources.Constant_16x);
 			Icons2017.Images.Add(Properties.Resources.ConstantPrivate_16x);
 			Icons2017.Images.Add(Properties.Resources.ConstantProtected_16x);
+			Icons2017.Images.Add(Properties.Resources.Property_16x);
+			Icons2017.Images.Add(Properties.Resources.PropertyPrivate_16x);
 
 			Icons2012 = new ImageList();
 			Icons2012.Images.Add(Properties.Resources.Library_6213);
@@ -65,6 +68,8 @@ namespace BinaryFilesReader
 			Icons2012.Images.Add(Properties.Resources.Constant_495);
 			Icons2012.Images.Add(Properties.Resources.Constant_Private_519);
 			Icons2012.Images.Add(Properties.Resources.Constant_Protected_508);
+			Icons2012.Images.Add(Properties.Resources.PropertyIcon);
+			Icons2012.Images.Add(Properties.Resources.Property_Private_505);
 		}
 
 		/// <summary>
@@ -155,6 +160,18 @@ namespace BinaryFilesReader
 		public static int GetEventImageIndex(EventInfo eventInfo)
 		{
 			return 15;
+		}
+
+		/// <summary>
+		/// Gets the image index corresponding to the provided property info.
+		/// </summary>
+		/// <param name="property">Property info.</param>
+		/// <returns>Index of the icon.</returns>
+		public static int GetPropertyImageIndex(PropertyInfo property)
+		{
+			if (property.GetAccessors(false).Any(a => a.IsPublic))
+				return 22;
+			return 23;
 		}
 	}
 }

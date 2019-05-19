@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using BinaryFilesReader.Properties;
 
 namespace BinaryFilesReader
 {
@@ -27,6 +28,11 @@ namespace BinaryFilesReader
 		public Dictionary<Type, FieldInfo[]> Fields { get; }
 
 		/// <summary>
+		/// Gets the collection of available properties for the type.
+		/// </summary>
+		public Dictionary<Type, PropertyInfo[]> Properties { get; }
+		
+		/// <summary>
 		/// Gets the collection of available events for the type.
 		/// </summary>
 		public Dictionary<Type, EventInfo[]> Events { get; }
@@ -42,6 +48,7 @@ namespace BinaryFilesReader
 			Types = new Dictionary<string, Type>();
 			Instances = new Dictionary<string, object>();
 			Fields = new Dictionary<Type, FieldInfo[]>();
+			Properties = new Dictionary<Type, PropertyInfo[]>();
 			Methods = new Dictionary<Type, MethodInfo[]>();
 			Events = new Dictionary<Type, EventInfo[]>();
 
@@ -58,7 +65,7 @@ namespace BinaryFilesReader
 		public void Instantiate(string typeName)
 		{
 			if (!Types.ContainsKey(typeName))
-				throw new ArgumentException(Properties.Resources.TypeNotDefinedInAssembly);
+				throw new ArgumentException(Resources.TypeNotDefinedInAssembly);
 
 			Instances[typeName] = Assembly.CreateInstance(typeName);
 		}
@@ -70,7 +77,7 @@ namespace BinaryFilesReader
 		public void InitializeMethodsForType(Type type)
 		{
 			if (!Types.ContainsValue(type))
-				throw new ArgumentException(Properties.Resources.TypeNotDefinedInAssembly);
+				throw new ArgumentException(Resources.TypeNotDefinedInAssembly);
 
 			Methods[type] = type.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public | BindingFlags.Static);
 		}
@@ -82,9 +89,21 @@ namespace BinaryFilesReader
 		public void InitializeFieldsForType(Type type)
 		{
 			if (!Types.ContainsValue(type))
-				throw new ArgumentException(Properties.Resources.TypeNotDefinedInAssembly);
+				throw new ArgumentException(Resources.TypeNotDefinedInAssembly);
 
 			Fields[type] = type.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public | BindingFlags.Static);
+		}
+
+		/// <summary>
+		/// Initializes the available properties collection for the provided type.
+		/// </summary>
+		/// <param name="type">Type to initialize the properties collection for.</param>
+		public void InitializePropertiesForType(Type type)
+		{
+			if (!Types.ContainsValue(type))
+				throw new ArgumentException(Resources.TypeNotDefinedInAssembly);
+
+			Properties[type] = type.GetProperties(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public | BindingFlags.Static);
 		}
 
 		/// <summary>
@@ -94,7 +113,7 @@ namespace BinaryFilesReader
 		public void InitializeEventsForType(Type type)
 		{
 			if (!Types.ContainsValue(type))
-				throw new ArgumentException(Properties.Resources.TypeNotDefinedInAssembly);
+				throw new ArgumentException(Resources.TypeNotDefinedInAssembly);
 
 			Events[type] = type.GetEvents(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
 		}

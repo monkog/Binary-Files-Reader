@@ -25,6 +25,7 @@ namespace BinaryFilesReaderTests
 			Assert.IsNotNull(_unitUnderTest.Instances);
 			Assert.IsNotNull(_unitUnderTest.Types);
 			Assert.IsNotNull(_unitUnderTest.Fields);
+			Assert.IsNotNull(_unitUnderTest.Properties);
 			Assert.IsNotNull(_unitUnderTest.Methods);
 			Assert.IsNotNull(_unitUnderTest.Events);
 		}
@@ -95,6 +96,27 @@ namespace BinaryFilesReaderTests
 		public void InitializeFieldsForType_InvalidType_ExceptionThrown()
 		{
 			void Initialize() => _unitUnderTest.InitializeFieldsForType(typeof(DecompiledAssembly));
+
+			Assert.Throws<ArgumentException>(Initialize);
+		}
+
+		[Test]
+		public void InitializePropertiesForType_ValidType_PropertiesCollectionAssigned()
+		{
+			var type = typeof(DecompiledAssemblyTests);
+			_unitUnderTest.InitializePropertiesForType(type);
+
+			var contains = _unitUnderTest.Properties.ContainsKey(type);
+			var properties = _unitUnderTest.Properties[type];
+
+			Assert.IsTrue(contains);
+			Assert.IsNotNull(properties);
+		}
+
+		[Test]
+		public void InitializePropertiesForType_InvalidType_ExceptionThrown()
+		{
+			void Initialize() => _unitUnderTest.InitializePropertiesForType(typeof(DecompiledAssembly));
 
 			Assert.Throws<ArgumentException>(Initialize);
 		}
