@@ -1,7 +1,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/6o3es3fa5fxpvf2v?svg=true)](https://ci.appveyor.com/project/monkog/binary-files-reader)
 
 ## Binary Files Reader
-This program allows you to read an **.exe* or **.dll* file and list objects that are compiled into this file.
+This program allows you to read an **.exe* or **.dll* file and list objects that are compiled into this file. It uses reflection mechanism to discover available types, create object instances and manipulate them.
 
 ![Application screenshot](./.Docs/Application.JPG)
 
