@@ -298,29 +298,11 @@
   <data name="Namespace_654" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\vs2012\Namespace_654.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OperatorPrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2017\OperatorPrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OperatorProtect_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2017\OperatorProtect_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OperatorSealed_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2017\OperatorSealed_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Operator_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\vs2017\Operator_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Operator_660" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\vs2012\Operator_660.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Operator_Private_499" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2012\Operator-Private_499.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Operator_Protected_498" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2012\Operator-Protected_498.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Operator_Sealed_661" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2012\Operator-Sealed_661.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PropertyIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\vs2012\PropertyIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

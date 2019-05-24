@@ -255,6 +255,16 @@ namespace BinaryFilesReaderTests
 			Assert.AreEqual(26, iconIndex);
 		}
 
+		[Test]
+		public void GetMethodImageIndex_Operator_27()
+		{
+			var method = GetType().GetMethods(BindingFlags.Public | BindingFlags.Static).Single(m => m.IsSpecialName);
+
+			var iconIndex = IconsStyle.GetMethodImageIndex(method);
+
+			Assert.AreEqual(27, iconIndex);
+		}
+
 		private class PrivateClass { }
 
 		protected class ProtectedClass { }
@@ -268,6 +278,8 @@ namespace BinaryFilesReaderTests
 		protected void ProtectedMethod() { }
 
 		private void PrivateMethod() { }
+
+		public static int operator +(IconsStyleTests a) { return 0; }
 
 		private int _privateField;
 

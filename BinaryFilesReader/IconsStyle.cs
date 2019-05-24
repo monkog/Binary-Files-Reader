@@ -47,6 +47,7 @@ namespace BinaryFilesReader
 			Icons2017.Images.Add(Properties.Resources.Structure_16x);
 			Icons2017.Images.Add(Properties.Resources.StructurePrivate_16x);
 			Icons2017.Images.Add(Properties.Resources.StructureProtect_16x);
+			Icons2017.Images.Add(Properties.Resources.Operator_16x);
 
 			Icons2012 = new ImageList();
 			Icons2012.Images.Add(Properties.Resources.Library_6213);
@@ -76,6 +77,7 @@ namespace BinaryFilesReader
 			Icons2012.Images.Add(Properties.Resources.Structure_507);
 			Icons2012.Images.Add(Properties.Resources.Structure_Private_512);
 			Icons2012.Images.Add(Properties.Resources.Structure_Protected_511);
+			Icons2012.Images.Add(Properties.Resources.Operator_660);
 		}
 
 		/// <summary>
@@ -135,6 +137,9 @@ namespace BinaryFilesReader
 		/// <returns>Index of the icon.</returns>
 		public static int GetMethodImageIndex(MethodInfo method)
 		{
+			if (method.IsSpecialName && method.IsStatic)
+				return 27;
+
 			if (method.IsPublic)
 				return 9;
 			if (method.IsPrivate)

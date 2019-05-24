@@ -648,66 +648,6 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Operator_Private_499 {
-            get {
-                object obj = ResourceManager.GetObject("Operator_Private_499", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Operator_Protected_498 {
-            get {
-                object obj = ResourceManager.GetObject("Operator_Protected_498", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Operator_Sealed_661 {
-            get {
-                object obj = ResourceManager.GetObject("Operator_Sealed_661", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OperatorPrivate_16x {
-            get {
-                object obj = ResourceManager.GetObject("OperatorPrivate_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OperatorProtect_16x {
-            get {
-                object obj = ResourceManager.GetObject("OperatorProtect_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OperatorSealed_16x {
-            get {
-                object obj = ResourceManager.GetObject("OperatorSealed_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Property_16x {
             get {
                 object obj = ResourceManager.GetObject("Property_16x", resourceCulture);

@@ -17,6 +17,7 @@ The list on the right appears after choosing a certain class or interface. It li
 * fields
 * properties
 * methods
+* operators
 * events
 
 ### Creating and manipulating an instance of an object
