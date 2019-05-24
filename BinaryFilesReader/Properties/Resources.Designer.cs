@@ -261,16 +261,6 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Delegate_Sealed_551 {
-            get {
-                object obj = ResourceManager.GetObject("Delegate_Sealed_551", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap DelegatePrivate_16x {
             get {
                 object obj = ResourceManager.GetObject("DelegatePrivate_16x", resourceCulture);
@@ -284,16 +274,6 @@ namespace BinaryFilesReader.Properties {
         internal static System.Drawing.Bitmap DelegateProtected_16x {
             get {
                 object obj = ResourceManager.GetObject("DelegateProtected_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DelegateSealed_16x {
-            get {
-                object obj = ResourceManager.GetObject("DelegateSealed_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

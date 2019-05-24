@@ -11,6 +11,7 @@ The list on the left contains a tree structure of files that were opened. It lis
 * interfaces
 * structures
 * enums
+* delegates
 
 The list on the right appears after choosing a certain class or interface. It lists objects that are defined in the chosen type such as:
 * constants

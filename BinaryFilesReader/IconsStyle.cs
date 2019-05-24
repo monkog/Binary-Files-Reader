@@ -48,6 +48,9 @@ namespace BinaryFilesReader
 			Icons2017.Images.Add(Properties.Resources.StructurePrivate_16x);
 			Icons2017.Images.Add(Properties.Resources.StructureProtect_16x);
 			Icons2017.Images.Add(Properties.Resources.Operator_16x);
+			Icons2017.Images.Add(Properties.Resources.Delegate_16x);
+			Icons2017.Images.Add(Properties.Resources.DelegateProtected_16x);
+			Icons2017.Images.Add(Properties.Resources.DelegatePrivate_16x);
 
 			Icons2012 = new ImageList();
 			Icons2012.Images.Add(Properties.Resources.Library_6213);
@@ -78,6 +81,9 @@ namespace BinaryFilesReader
 			Icons2012.Images.Add(Properties.Resources.Structure_Private_512);
 			Icons2012.Images.Add(Properties.Resources.Structure_Protected_511);
 			Icons2012.Images.Add(Properties.Resources.Operator_660);
+			Icons2012.Images.Add(Properties.Resources.Delegate_540);
+			Icons2012.Images.Add(Properties.Resources.Delegate_Protected_573);
+			Icons2012.Images.Add(Properties.Resources.Delegate_Private_580);
 		}
 
 		/// <summary>
@@ -89,40 +95,20 @@ namespace BinaryFilesReader
 		{
 			if (type != null)
 			{
+				if (type.BaseType == typeof(MulticastDelegate))
+					return GetDelegateImageIndex(type);
+
 				if (type.IsClass)
-				{
-					if (type.IsSealed)
-						return 4;
-					if (type.IsPublic)
-						return 1;
-					if (type.IsNestedFamily)
-						return 3;
-					return 2;
-				}
+					return GetClassImageIndex(type);
+
 				if (type.IsInterface)
-				{
-					if (type.IsPublic)
-						return 5;
-					if (type.IsNestedFamily)
-						return 7;
-					return 6;
-				}
+					return GetInterfaceImageIndex(type);
+
 				if (type.IsEnum)
-				{
-					if (type.IsPublic)
-						return 16;
-					if (type.IsNestedFamily)
-						return 18;
-					return 17;
-				}
+					return GetEnumImageIndex(type);
+
 				if (type.IsValueType)
-				{
-					if (type.IsPublic)
-						return 24;
-					if (type.IsNestedFamily)
-						return 26;
-					return 25;
-				}
+					return GetStructImageIndex(type);
 			}
 			else
 				return 8;
@@ -156,13 +142,7 @@ namespace BinaryFilesReader
 		{
 			// Constant fields
 			if (field.IsLiteral && !field.IsInitOnly)
-			{
-				if (field.IsPublic)
-					return 19;
-				if (field.IsPrivate)
-					return 20;
-				return 21;
-			}
+				return GetConstantImageIndex(field);
 
 			if (field.IsPublic)
 				return 12;
@@ -191,6 +171,62 @@ namespace BinaryFilesReader
 			if (property.GetAccessors(false).Any(a => a.IsPublic))
 				return 22;
 			return 23;
+		}
+
+		private static int GetStructImageIndex(Type type)
+		{
+			if (type.IsPublic || type.IsNestedPublic)
+				return 24;
+			if (type.IsNestedFamily)
+				return 26;
+			return 25;
+		}
+
+		private static int GetEnumImageIndex(Type type)
+		{
+			if (type.IsPublic || type.IsNestedPublic)
+				return 16;
+			if (type.IsNestedFamily)
+				return 18;
+			return 17;
+		}
+
+		private static int GetInterfaceImageIndex(Type type)
+		{
+			if (type.IsPublic || type.IsNestedPublic)
+				return 5;
+			if (type.IsNestedFamily)
+				return 7;
+			return 6;
+		}
+
+		private static int GetClassImageIndex(Type type)
+		{
+			if (type.IsSealed)
+				return 4;
+			if (type.IsPublic || type.IsNestedPublic)
+				return 1;
+			if (type.IsNestedFamily)
+				return 3;
+			return 2;
+		}
+
+		private static int GetDelegateImageIndex(Type type)
+		{
+			if (type.IsPublic || type.IsNestedPublic)
+				return 28;
+			if (type.IsNestedFamily)
+				return 29;
+			return 30;
+		}
+
+		private static int GetConstantImageIndex(FieldInfo field)
+		{
+			if (field.IsPublic)
+				return 19;
+			if (field.IsPrivate)
+				return 20;
+			return 21;
 		}
 	}
 }

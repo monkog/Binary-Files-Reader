@@ -18,6 +18,14 @@ namespace BinaryFilesReaderTests
 		}
 
 		[Test]
+		public void GetTypeImageIndex_NestedPublicClass_1()
+		{
+			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(NestedPublicClass));
+
+			Assert.AreEqual(1, iconIndex);
+		}
+
+		[Test]
 		public void GetTypeImageIndex_PrivateClass_2()
 		{
 			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(PrivateClass));
@@ -45,6 +53,14 @@ namespace BinaryFilesReaderTests
 		public void GetTypeImageIndex_PublicInterface_5()
 		{
 			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(IPublicInterface));
+
+			Assert.AreEqual(5, iconIndex);
+		}
+
+		[Test]
+		public void GetTypeImageIndex_NestedPublicInterface_5()
+		{
+			var iconIndex = IconsStyle.GetTypeImageIndex(typeof(INestedPublicInterface));
 
 			Assert.AreEqual(5, iconIndex);
 		}
@@ -156,6 +172,16 @@ namespace BinaryFilesReaderTests
 		}
 
 		[Test]
+		public void GetTypeImageIndex_NestedPublicEnum_16()
+		{
+			var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(t => t.Name == nameof(NestedPublicEnum));
+
+			var iconIndex = IconsStyle.GetTypeImageIndex(type);
+
+			Assert.AreEqual(16, iconIndex);
+		}
+
+		[Test]
 		public void GetTypeImageIndex_PrivateEnum_17()
 		{
 			var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(t => t.Name == nameof(PrivateEnum));
@@ -236,6 +262,16 @@ namespace BinaryFilesReaderTests
 		}
 
 		[Test]
+		public void GetTypeImageIndex_NestedPublicStruct_24()
+		{
+			var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(t => t.Name == nameof(NestedPublicStruct));
+
+			var iconIndex = IconsStyle.GetTypeImageIndex(type);
+
+			Assert.AreEqual(24, iconIndex);
+		}
+
+		[Test]
 		public void GetTypeImageIndex_PrivateStruct_25()
 		{
 			var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(t => t.Name == nameof(PrivateStruct));
@@ -265,13 +301,57 @@ namespace BinaryFilesReaderTests
 			Assert.AreEqual(27, iconIndex);
 		}
 
+		[Test]
+		public void GetTypeImageIndex_PublicDelegate_28()
+		{
+			var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(t => t.Name == nameof(PublicDelegate));
+
+			var iconIndex = IconsStyle.GetTypeImageIndex(type);
+
+			Assert.AreEqual(28, iconIndex);
+		}
+
+		[Test]
+		public void GetTypeImageIndex_NestedPublicDelegate_28()
+		{
+			var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(t => t.Name == nameof(NestedPublicDelegate));
+
+			var iconIndex = IconsStyle.GetTypeImageIndex(type);
+
+			Assert.AreEqual(28, iconIndex);
+		}
+
+		[Test]
+		public void GetTypeImageIndex_ProtectedDelegate_29()
+		{
+			var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(t => t.Name == nameof(ProtectedDelegate));
+
+			var iconIndex = IconsStyle.GetTypeImageIndex(type);
+
+			Assert.AreEqual(29, iconIndex);
+		}
+
+		[Test]
+		public void GetTypeImageIndex_PrivateDelegate_30()
+		{
+			var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(t => t.Name == nameof(PrivateDelegate));
+
+			var iconIndex = IconsStyle.GetTypeImageIndex(type);
+
+			Assert.AreEqual(30, iconIndex);
+		}
+
 		private class PrivateClass { }
 
 		protected class ProtectedClass { }
 
+		public class NestedPublicClass { }
+
 		private interface IPrivateInterface { }
 
 		protected interface IProtectedInterface { }
+
+		public interface INestedPublicInterface { }
 
 		public void PublicMethod() { }
 
@@ -303,9 +383,19 @@ namespace BinaryFilesReaderTests
 
 		protected enum ProtectedEnum { }
 
+		public enum NestedPublicEnum { }
+
 		private struct PrivateStruct { }
 
 		protected struct ProtectedStruct { }
+
+		public struct NestedPublicStruct { }
+
+		private delegate int PrivateDelegate();
+
+		protected delegate int ProtectedDelegate();
+
+		public delegate int NestedPublicDelegate();
 	}
 
 	public sealed class SealedClass { }
@@ -317,4 +407,6 @@ namespace BinaryFilesReaderTests
 	public enum PublicEnum { }
 
 	public struct PublicStruct { }
+
+	public delegate int PublicDelegate();
 }
