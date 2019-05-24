@@ -35,8 +35,8 @@
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.iconsSetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.vS2010StyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.vS2012StyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.vS2017StyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.treeView = new System.Windows.Forms.TreeView();
 			this.buttonCreate = new System.Windows.Forms.Button();
 			this.listView = new System.Windows.Forms.ListView();
@@ -44,6 +44,7 @@
 			this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.detailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.vS2010StyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.contextMenuStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -91,20 +92,12 @@
 			// iconsSetToolStripMenuItem
 			// 
 			this.iconsSetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vS2010StyleToolStripMenuItem,
             this.vS2012StyleToolStripMenuItem,
-            this.vS2010StyleToolStripMenuItem});
+            this.vS2017StyleToolStripMenuItem});
 			this.iconsSetToolStripMenuItem.Name = "iconsSetToolStripMenuItem";
 			this.iconsSetToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
 			this.iconsSetToolStripMenuItem.Text = "Icons set";
-			// 
-			// vS2010StyleToolStripMenuItem
-			// 
-			this.vS2010StyleToolStripMenuItem.Checked = true;
-			this.vS2010StyleToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.vS2010StyleToolStripMenuItem.Name = "vS2010StyleToolStripMenuItem";
-			this.vS2010StyleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.vS2010StyleToolStripMenuItem.Text = "VS2017 style";
-			this.vS2010StyleToolStripMenuItem.Click += new System.EventHandler(this.IconsTo2017StyleChanged);
 			// 
 			// vS2012StyleToolStripMenuItem
 			// 
@@ -112,6 +105,15 @@
 			this.vS2012StyleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.vS2012StyleToolStripMenuItem.Text = "VS2012 style";
 			this.vS2012StyleToolStripMenuItem.Click += new System.EventHandler(this.IconsTo2012StyleChanged);
+			// 
+			// vS2017StyleToolStripMenuItem
+			// 
+			this.vS2017StyleToolStripMenuItem.Checked = true;
+			this.vS2017StyleToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.vS2017StyleToolStripMenuItem.Name = "vS2017StyleToolStripMenuItem";
+			this.vS2017StyleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.vS2017StyleToolStripMenuItem.Text = "VS2017 style";
+			this.vS2017StyleToolStripMenuItem.Click += new System.EventHandler(this.IconsTo2017StyleChanged);
 			// 
 			// treeView
 			// 
@@ -181,6 +183,13 @@
 			this.detailsToolStripMenuItem.Text = "Details";
 			this.detailsToolStripMenuItem.Click += new System.EventHandler(this.DisplayDetailedMethodList);
 			// 
+			// vS2010StyleToolStripMenuItem
+			// 
+			this.vS2010StyleToolStripMenuItem.Name = "vS2010StyleToolStripMenuItem";
+			this.vS2010StyleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.vS2010StyleToolStripMenuItem.Text = "VS2010 style";
+			this.vS2010StyleToolStripMenuItem.Click += new System.EventHandler(this.IconsTo2010StyleChanged);
+			// 
 			// Browser
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,13 +220,14 @@
         private System.Windows.Forms.TreeView treeView;
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.ToolStripMenuItem iconsSetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vS2010StyleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vS2017StyleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vS2012StyleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detailsToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         public System.Windows.Forms.ListView listView;
         private System.Windows.Forms.ColumnHeader column;
-    }
+		private System.Windows.Forms.ToolStripMenuItem vS2010StyleToolStripMenuItem;
+	}
 }
 

@@ -296,16 +296,26 @@ namespace BinaryFilesReader
 
 		private void IconsTo2017StyleChanged(object sender, EventArgs e)
 		{
-			vS2010StyleToolStripMenuItem.Checked = true;
+			vS2017StyleToolStripMenuItem.Checked = true;
 			vS2012StyleToolStripMenuItem.Checked = false;
+			vS2010StyleToolStripMenuItem.Checked = false;
 			listView.SmallImageList = treeView.ImageList = IconsStyle.Icons2017;
 		}
 
 		private void IconsTo2012StyleChanged(object sender, EventArgs e)
 		{
-			vS2010StyleToolStripMenuItem.Checked = false;
+			vS2017StyleToolStripMenuItem.Checked = false;
 			vS2012StyleToolStripMenuItem.Checked = true;
+			vS2010StyleToolStripMenuItem.Checked = false;
 			listView.SmallImageList = treeView.ImageList = IconsStyle.Icons2012;
+		}
+
+		private void IconsTo2010StyleChanged(object sender, EventArgs e)
+		{
+			vS2017StyleToolStripMenuItem.Checked = false;
+			vS2012StyleToolStripMenuItem.Checked = false;
+			vS2010StyleToolStripMenuItem.Checked = true;
+			listView.SmallImageList = treeView.ImageList = IconsStyle.Icons2010;
 		}
 
 		private void DisplayDetailedMethodList(object sender, EventArgs e)

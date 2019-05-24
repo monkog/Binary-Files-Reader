@@ -384,6 +384,102 @@
   <ItemGroup>
     <None Include="icons\vs2017\StructureSealed_16x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2012\Class_489.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Assembly_10088_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Class_5893_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Class-Private_493_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Class-Protected_492_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Class-Sealed_490_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Constant_495_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Constant-Private_519_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Constant-Protected_508_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Delegate-Friend_562_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Delegate-Private_580_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Delegate-Protected_573_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Enum_582_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\EnumItem-Private_592_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\EnumItem-Protected_591_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Event-Friend_596_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Field-Private_545_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Field-Protected_544_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Field-Shortcut_546_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Interface-Friend_614_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Interface-Private_616_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Interface-Protected_615_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Method-Friend_638_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Method-Private_640_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Method-Protected_639_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Namespace-Friend_656_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Operator-Public_10530_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Property-Friend_503_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Property-Private_505_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Structure-Friend_510_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Structure-Private_512_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\vs2010\Structure-Protected_511_24.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

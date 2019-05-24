@@ -142,9 +142,6 @@
     <value>File {0} contains one or more types that could not be loaded. {1}</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ClassIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\vs2012\ClassIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ClassPrivate_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\vs2017\ClassPrivate_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -330,5 +327,101 @@
   </data>
   <data name="ValueOfField" xml:space="preserve">
     <value>The value of {0} field for {1} instance.</value>
+  </data>
+  <data name="Assembly_10088_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Assembly_10088_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Class_489" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2012\Class_489.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Class_5893_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Class_5893_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Class_Private_493_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Class-Private_493_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Class_Protected_492_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Class-Protected_492_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Class_Sealed_490_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Class-Sealed_490_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Constant_495_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Constant_495_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Constant_Private_519_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Constant-Private_519_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Constant_Protected_508_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Constant-Protected_508_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delegate_Friend_562_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Delegate-Friend_562_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delegate_Private_580_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Delegate-Private_580_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delegate_Protected_573_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Delegate-Protected_573_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumItem_Private_592_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\EnumItem-Private_592_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumItem_Protected_591_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\EnumItem-Protected_591_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Enum_582_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Enum_582_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Event_Friend_596_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Event-Friend_596_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Field_Private_545_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Field-Private_545_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Field_Protected_544_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Field-Protected_544_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Field_Shortcut_546_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Field-Shortcut_546_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Interface_Friend_614_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Interface-Friend_614_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Interface_Private_616_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Interface-Private_616_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Interface_Protected_615_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Interface-Protected_615_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Method_Friend_638_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Method-Friend_638_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Method_Private_640_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Method-Private_640_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Method_Protected_639_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Method-Protected_639_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Namespace_Friend_656_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Namespace-Friend_656_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Operator_Public_10530_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Operator-Public_10530_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Property_Friend_503_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Property-Friend_503_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Property_Private_505_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Property-Private_505_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Structure_Friend_510_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Structure-Friend_510_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Structure_Private_512_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Structure-Private_512_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Structure_Protected_511_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\vs2010\Structure-Protected_511_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

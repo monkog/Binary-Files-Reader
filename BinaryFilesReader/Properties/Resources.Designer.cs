@@ -70,6 +70,16 @@ namespace BinaryFilesReader.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Assembly_10088_24 {
+            get {
+                object obj = ResourceManager.GetObject("Assembly_10088_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File {0} could not be loaded. {1}.
         /// </summary>
         internal static string CannotLoadAssembly {
@@ -91,9 +101,39 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Class_489 {
+            get {
+                object obj = ResourceManager.GetObject("Class_489", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Class_5893_24 {
+            get {
+                object obj = ResourceManager.GetObject("Class_5893_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Class_Private_493 {
             get {
                 object obj = ResourceManager.GetObject("Class_Private_493", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Class_Private_493_24 {
+            get {
+                object obj = ResourceManager.GetObject("Class_Private_493_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -111,6 +151,16 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Class_Protected_492_24 {
+            get {
+                object obj = ResourceManager.GetObject("Class_Protected_492_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Class_Sealed_490 {
             get {
                 object obj = ResourceManager.GetObject("Class_Sealed_490", resourceCulture);
@@ -121,9 +171,9 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ClassIcon {
+        internal static System.Drawing.Bitmap Class_Sealed_490_24 {
             get {
-                object obj = ResourceManager.GetObject("ClassIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("Class_Sealed_490_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -181,6 +231,16 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Constant_495_24 {
+            get {
+                object obj = ResourceManager.GetObject("Constant_495_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Constant_Private_519 {
             get {
                 object obj = ResourceManager.GetObject("Constant_Private_519", resourceCulture);
@@ -191,9 +251,29 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Constant_Private_519_24 {
+            get {
+                object obj = ResourceManager.GetObject("Constant_Private_519_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Constant_Protected_508 {
             get {
                 object obj = ResourceManager.GetObject("Constant_Protected_508", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Constant_Protected_508_24 {
+            get {
+                object obj = ResourceManager.GetObject("Constant_Protected_508_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -241,6 +321,16 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Delegate_Friend_562_24 {
+            get {
+                object obj = ResourceManager.GetObject("Delegate_Friend_562_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delegate_Private_580 {
             get {
                 object obj = ResourceManager.GetObject("Delegate_Private_580", resourceCulture);
@@ -251,9 +341,29 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Delegate_Private_580_24 {
+            get {
+                object obj = ResourceManager.GetObject("Delegate_Private_580_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delegate_Protected_573 {
             get {
                 object obj = ResourceManager.GetObject("Delegate_Protected_573", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delegate_Protected_573_24 {
+            get {
+                object obj = ResourceManager.GetObject("Delegate_Protected_573_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -291,6 +401,16 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Enum_582_24 {
+            get {
+                object obj = ResourceManager.GetObject("Enum_582_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Enum_Private_586 {
             get {
                 object obj = ResourceManager.GetObject("Enum_Private_586", resourceCulture);
@@ -314,6 +434,26 @@ namespace BinaryFilesReader.Properties {
         internal static System.Drawing.Bitmap Enumerator_16x {
             get {
                 object obj = ResourceManager.GetObject("Enumerator_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EnumItem_Private_592_24 {
+            get {
+                object obj = ResourceManager.GetObject("EnumItem_Private_592_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EnumItem_Protected_591_24 {
+            get {
+                object obj = ResourceManager.GetObject("EnumItem_Protected_591_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -361,6 +501,16 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Event_Friend_596_24 {
+            get {
+                object obj = ResourceManager.GetObject("Event_Friend_596_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Field_16x {
             get {
                 object obj = ResourceManager.GetObject("Field_16x", resourceCulture);
@@ -381,9 +531,39 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Field_Private_545_24 {
+            get {
+                object obj = ResourceManager.GetObject("Field_Private_545_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Field_Protected_544 {
             get {
                 object obj = ResourceManager.GetObject("Field_Protected_544", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Field_Protected_544_24 {
+            get {
+                object obj = ResourceManager.GetObject("Field_Protected_544_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Field_Shortcut_546_24 {
+            get {
+                object obj = ResourceManager.GetObject("Field_Shortcut_546_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -441,6 +621,16 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Interface_Friend_614_24 {
+            get {
+                object obj = ResourceManager.GetObject("Interface_Friend_614_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Interface_Private_616 {
             get {
                 object obj = ResourceManager.GetObject("Interface_Private_616", resourceCulture);
@@ -451,9 +641,29 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Interface_Private_616_24 {
+            get {
+                object obj = ResourceManager.GetObject("Interface_Private_616_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Interface_Protected_615 {
             get {
                 object obj = ResourceManager.GetObject("Interface_Protected_615", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Interface_Protected_615_24 {
+            get {
+                object obj = ResourceManager.GetObject("Interface_Protected_615_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -539,6 +749,16 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Method_Friend_638_24 {
+            get {
+                object obj = ResourceManager.GetObject("Method_Friend_638_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Method_Private_640 {
             get {
                 object obj = ResourceManager.GetObject("Method_Private_640", resourceCulture);
@@ -549,9 +769,29 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Method_Private_640_24 {
+            get {
+                object obj = ResourceManager.GetObject("Method_Private_640_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Method_Protected_639 {
             get {
                 object obj = ResourceManager.GetObject("Method_Protected_639", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Method_Protected_639_24 {
+            get {
+                object obj = ResourceManager.GetObject("Method_Protected_639_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -597,6 +837,16 @@ namespace BinaryFilesReader.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Namespace_Friend_656_24 {
+            get {
+                object obj = ResourceManager.GetObject("Namespace_Friend_656_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The provided object does not have a corresponding icon..
         /// </summary>
         internal static string ObjectIconNotSupported {
@@ -628,6 +878,16 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Operator_Public_10530_24 {
+            get {
+                object obj = ResourceManager.GetObject("Operator_Public_10530_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Property_16x {
             get {
                 object obj = ResourceManager.GetObject("Property_16x", resourceCulture);
@@ -638,9 +898,29 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Property_Friend_503_24 {
+            get {
+                object obj = ResourceManager.GetObject("Property_Friend_503_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Property_Private_505 {
             get {
                 object obj = ResourceManager.GetObject("Property_Private_505", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Property_Private_505_24 {
+            get {
+                object obj = ResourceManager.GetObject("Property_Private_505_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -688,6 +968,16 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Structure_Friend_510_24 {
+            get {
+                object obj = ResourceManager.GetObject("Structure_Friend_510_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Structure_Private_512 {
             get {
                 object obj = ResourceManager.GetObject("Structure_Private_512", resourceCulture);
@@ -698,9 +988,29 @@ namespace BinaryFilesReader.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Structure_Private_512_24 {
+            get {
+                object obj = ResourceManager.GetObject("Structure_Private_512_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Structure_Protected_511 {
             get {
                 object obj = ResourceManager.GetObject("Structure_Protected_511", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Structure_Protected_511_24 {
+            get {
+                object obj = ResourceManager.GetObject("Structure_Protected_511_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

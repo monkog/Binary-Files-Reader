@@ -17,6 +17,11 @@ namespace BinaryFilesReader
 		/// </summary>
 		public static ImageList Icons2012 { get; }
 
+		/// <summary>
+		/// Gets the image list of Visual Studio 2010 style.
+		/// </summary>
+		public static ImageList Icons2010 { get; }
+
 		static IconsStyle()
 		{
 			Icons2017 = new ImageList();
@@ -54,7 +59,7 @@ namespace BinaryFilesReader
 
 			Icons2012 = new ImageList();
 			Icons2012.Images.Add(Properties.Resources.Library_6213);
-			Icons2012.Images.Add(Properties.Resources.ClassIcon);
+			Icons2012.Images.Add(Properties.Resources.Class_489);
 			Icons2012.Images.Add(Properties.Resources.Class_Private_493);
 			Icons2012.Images.Add(Properties.Resources.Class_Protected_492);
 			Icons2012.Images.Add(Properties.Resources.Class_Sealed_490);
@@ -84,6 +89,39 @@ namespace BinaryFilesReader
 			Icons2012.Images.Add(Properties.Resources.Delegate_540);
 			Icons2012.Images.Add(Properties.Resources.Delegate_Protected_573);
 			Icons2012.Images.Add(Properties.Resources.Delegate_Private_580);
+
+			Icons2010 = new ImageList();
+			Icons2010.Images.Add(Properties.Resources.Assembly_10088_24);
+			Icons2010.Images.Add(Properties.Resources.Class_5893_24);
+			Icons2010.Images.Add(Properties.Resources.Class_Private_493_24);
+			Icons2010.Images.Add(Properties.Resources.Class_Protected_492_24);
+			Icons2010.Images.Add(Properties.Resources.Class_Sealed_490_24);
+			Icons2010.Images.Add(Properties.Resources.Interface_Friend_614_24);
+			Icons2010.Images.Add(Properties.Resources.Interface_Private_616_24);
+			Icons2010.Images.Add(Properties.Resources.Interface_Protected_615_24);
+			Icons2010.Images.Add(Properties.Resources.Namespace_Friend_656_24);
+			Icons2010.Images.Add(Properties.Resources.Method_Friend_638_24);
+			Icons2010.Images.Add(Properties.Resources.Method_Private_640_24);
+			Icons2010.Images.Add(Properties.Resources.Method_Protected_639_24);
+			Icons2010.Images.Add(Properties.Resources.Field_Shortcut_546_24);
+			Icons2010.Images.Add(Properties.Resources.Field_Private_545_24);
+			Icons2010.Images.Add(Properties.Resources.Field_Protected_544_24);
+			Icons2010.Images.Add(Properties.Resources.Event_Friend_596_24);
+			Icons2010.Images.Add(Properties.Resources.Enum_582_24);
+			Icons2010.Images.Add(Properties.Resources.EnumItem_Private_592_24);
+			Icons2010.Images.Add(Properties.Resources.EnumItem_Protected_591_24);
+			Icons2010.Images.Add(Properties.Resources.Constant_495_24);
+			Icons2010.Images.Add(Properties.Resources.Constant_Private_519_24);
+			Icons2010.Images.Add(Properties.Resources.Constant_Protected_508_24);
+			Icons2010.Images.Add(Properties.Resources.Property_Friend_503_24);
+			Icons2010.Images.Add(Properties.Resources.Property_Private_505_24);
+			Icons2010.Images.Add(Properties.Resources.Structure_Friend_510_24);
+			Icons2010.Images.Add(Properties.Resources.Structure_Private_512_24);
+			Icons2010.Images.Add(Properties.Resources.Structure_Protected_511_24);
+			Icons2010.Images.Add(Properties.Resources.Operator_Public_10530_24);
+			Icons2010.Images.Add(Properties.Resources.Delegate_Friend_562_24);
+			Icons2010.Images.Add(Properties.Resources.Delegate_Protected_573_24);
+			Icons2010.Images.Add(Properties.Resources.Delegate_Private_580_24);
 		}
 
 		/// <summary>
