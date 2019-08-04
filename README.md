@@ -1,6 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/6o3es3fa5fxpvf2v?svg=true)](https://ci.appveyor.com/project/monkog/binary-files-reader)
 
-## Binary Files Reader
+# Binary Files Reader
 This program allows you to read an **.exe* or **.dll* file and list objects that are compiled into this file. It uses reflection mechanism to discover available types, create object instances and manipulate them.
 
 ![Application screenshot](./.Docs/Application.JPG)
@@ -21,7 +21,7 @@ The list on the right appears after choosing a certain class or interface. It li
 * operators
 * events
 
-### Creating and manipulating an instance of an object
+## Creating and manipulating an instance of an object
 If the type provides a public parameterless constructor, the application gives you a possibility to create an instance of this type.  
 
 ![Field value window screenshot](./.Docs/FieldValue.JPG)
